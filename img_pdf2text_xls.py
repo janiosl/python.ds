@@ -3,8 +3,14 @@ Programa para leitura de imagens ou pdf e conversão para formatos
 tratáveis por RPAs (TXT, XLSX, CSV,etc).
 
 Desenvolvimento: Janio de Souza Lima
+Citações: algumas partes foram inspiradas ou
+adapatadas dos estudos do livro Web Scraping
+com Python, da escritora Ryan Mitchell, ótima
+leitura para aprofundar o tema e ver em prática
+a junção de OCR e PDF para varredura e interpretação
+de dados da web.
 
-OBSERVAÇÃO: Além dsa bibliotecas abaixo é necessária
+OBSERVAÇÃO: Além das bibliotecas abaixo é necessária
 a instalação da ferramenta Google Tesseract
 
 Documentação do projeto Google Tesseract:
