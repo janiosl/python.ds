@@ -1,5 +1,5 @@
 """
-Bloco de Noas Simples
+Bloco de Notas Simples
 Desenvolvido por Janio de Souza Lima
 Adaptado de @papa_programmer
 """
