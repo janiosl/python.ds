@@ -32,7 +32,7 @@ def concatenaPdf(caminho):
     arquivos = glob('*.pdf')
     destino = r'concatenado\concatenado.pdf'
 
-    #Cria o diretório de resultado, caso não existe
+    #Cria o diretório de resultado, caso não exista
     if not os.path.exists('concatenado'):
         os.makedirs(r'.\concatenado')
         print('Diretório de destino criado\nProsseguindo...')
