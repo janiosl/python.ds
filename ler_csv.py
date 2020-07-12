@@ -18,5 +18,7 @@ def ler_csv(filename):
     csvData = list(csvReader)
     periodo = csvData[0]
     dados = [float(csvData[1][k]) for k in range(0, len(csvData[1]))]
-
+    
+    csvFile.close()
+    
     return periodo, dados
