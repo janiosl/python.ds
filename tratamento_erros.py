@@ -27,9 +27,9 @@ if numero1 > numero2:
 
 
 """
-Nos exemplos trabalhos com erros que geram mensagens de exeção no Python, seja
-por sintaxe inválida, nomes de variáveis ou funções digitadas erradamente,
-variáveis inexistentes, etc.
+Nos exemplos abaixo trabalhamos com erros que geram mensagens de exeção no
+Python, seja por sintaxe inválida, nomes de variáveis ou funções digitadas
+erroneamente, variáveis inexistentes, etc.
 
 Para este tipo de situação é possível a análise interativa e correção do erro,
 ou o tratamento da exceção usando a estrutura try - except
