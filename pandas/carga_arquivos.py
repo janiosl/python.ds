@@ -19,10 +19,11 @@ import os
 os.chdir(r'D:\git\python.ds\data')
 arquivo = 'yahoo_stock_12-12-2020.csv'
 
+
 #Carregar os dados
 data = pd.read_csv(arquivo)
 
-#Analisar caracterísitcas dos dados
+#Analisar características dos dados
 data.describe()
 data.columns
 
@@ -30,8 +31,8 @@ data.columns
 data['Close'].describe()
 
 #Consultar primeiras e últimas ocorrências
-data.head()
-data.tail()
+data.head(10)
+data.tail(1)
 
 #Consultar linhas específicas
 data.loc[0]
@@ -44,7 +45,7 @@ from random import sample
 samp = sample(list(data.index), 10)
 test = data.iloc[samp]
 #Outra opção de amostra
-#samp2 = sample(list(range(0,2666)), 10)
+#samp2 = sample(list(range(0,2665)), 10)
 
 #Consultar atribustos específicos (filtrar colunas)
 price = data.Close
@@ -58,3 +59,4 @@ data_online = pd.read_csv(arquivo_online)
 
 #Carregar dados a partir de planilha
 data_xls = pd.read_excel(r'..\data\yahoo_stock_12-12-2020.xlsx')
+

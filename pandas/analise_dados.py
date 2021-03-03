@@ -48,4 +48,9 @@ data.head()
 output = r'..\data\yahoo_stock_12-12-2020_analise.csv'
 data.to_csv(output)
 
+#Dados da aula passada
+arquivo_online = 'https://raw.githubusercontent.com/janiosl/python.ds/master/data/yahoo_stock_12-12-2020.csv'
+data_online = pd.read_csv(arquivo_online)
 
+data_online['Double'] = data_online.Close * 2
+data_online.to_excel('data_online.xlsx')
