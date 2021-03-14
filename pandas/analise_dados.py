@@ -16,11 +16,11 @@ import pandas as pd
 import os
 
 
-#os.chdir(r'D:\git\python.ds\data')
+os.chdir(r'[Diretório desejado]')
 
 #Dados do arquivo
 os.getcwd()
-arquivo = r'..\data\yahoo_stock_12-12-2020.csv'
+arquivo = 'yahoo_stock_12-12-2020.csv'
 
 #Carregar os dados
 data = pd.read_csv(arquivo)
@@ -29,12 +29,21 @@ data = pd.read_csv(arquivo)
 data.describe()
 
 data.columns
+data.values
 data.Close.describe()
 
 #Medidas estatística de um atributo
-data['Close'].mean()
-data['Close'].max()
-data['Close'].sum()
+data['Close'].count() #Total de observações
+data['Close'].mean() #Média
+data['Close'].median() #Mediana
+data['Close'].max() #Valor máximo
+data['Close'].min() #Valor mínimo
+data['Close'].sum() #Soma dos valores
+data['Close'].cumsum() #Soma cumulativa
+data['Close'].prod() #Produto da multiplicação de todos valores
+data['Close'].var() #Variância
+data['Close'].std() #Desvio padrão
+data['Close'].pct_change() #Mudança percentual a cada observação
 
 #Adicionar atributos
 data['Tax_pct'] = 0.15
