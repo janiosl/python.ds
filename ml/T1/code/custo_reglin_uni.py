@@ -2,11 +2,10 @@ import numpy as np
 
 def custo_reglin_uni(X, y, theta):
 
-    # Quantidade de exemplos de treinamento
+    # Quantidade de exemplos
     m = len(y)
 
-    # Computar a funcao do custo J
+    # Computa a funcao de custo J
     J = (np.sum((X.dot(theta) - y)**2)) / (2 * m)
 
     return J
-
