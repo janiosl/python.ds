@@ -12,7 +12,7 @@ outros códigos que foram usados como base ou que apresentam conceitos ou aplica
 * `ensemble:` Combinação de Métodos com abordagem *Ensemble Learning*
 * `knn:` k-NN - *k-Nearest Neighbors*
 * `randomForest:` Florestas Aleatórias (método *ensemble* baseado em Árvores de Decisão)
-* `reg:` Métodos de regressão (regressão linear, regressão logística, regressão polinomia, regressões com regularização)
+* `reg:` Métodos de regressão (regressão linear, regressão logística, regressão polinomial, regressões com regularização)
 * `svm`: SVM - *Support Vector Machines*
 
 **OBSERVAÇÃO**: A lista acima representa apenas alguns dos algoritmos já estudados, cujos notebooks estão disponíveis nas pastas nomeadas.
