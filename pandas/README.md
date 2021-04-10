@@ -12,7 +12,7 @@ As implementações são realizadas em arquivos separados para organização did
 * `graficos_pandas.py`: Explora as opções de gráficos embarcados em objetos do `pandas` sem a necessidade de uso de bibliotecas complemantares para visualizção de dados.
 
 
-**OBSERVAÇÃO**: A lista acima representa apenas algumas das funcionalidades já publicadas nos vídeos. Contudo, à medida que novos conteúdos estiverem prontos serão disponibilizadas, seguindo a mesma lógica.
+**OBSERVAÇÃO**: A lista acima representa apenas algumas das funcionalidades já publicadas nos vídeos. Contudo, à medida que novos conteúdos estiverem prontos serão disponibilizados, seguindo a mesma lógica.
 
 Mais exemplos, explicações e aplicações de Python para Data Science e análise de dados em geral no [**Canal Youtube Python DS**]( https://www.youtube.com/channel/UCdpQJDGrM3Xj58ZFF-2UNBA?view_as=subscriber).
 
