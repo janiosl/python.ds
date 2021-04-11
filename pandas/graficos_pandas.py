@@ -32,7 +32,7 @@ data.plot(y='Close')
 data.Close.hist()
 
 #Dispersão entre preço de fechamento e preço máximo
-data.plot(kind='scatter', x='Close', y='High', #alpha=0.4,
+data.plot(kind='scatter', x='Close', y='High', alpha=0.4,
              figsize=(8,4))
 
 
