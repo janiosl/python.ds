@@ -14,6 +14,7 @@ outros códigos que foram usados como base ou que apresentam conceitos ou aplica
 * `randomForest:` Florestas Aleatórias (método *ensemble* baseado em Árvores de Decisão)
 * `reg:` Métodos de regressão (regressão linear, regressão logística, regressão polinomial, regressões com regularização)
 * `svm`: SVM - *Support Vector Machines*
+* `pca`: PCA - *Principal Component Analysis* é um algoritmo que permite usar a redução de dimensionalidade para uso de dados com dimensões originais muito grandes/complexas para alguns tipos de algoritmos de aprendizado de máquina.
 
 **OBSERVAÇÃO**: A lista acima representa apenas alguns dos algoritmos já estudados, cujos notebooks estão disponíveis nas pastas nomeadas.
 Contudo, à medida que novos conteúdos estiverem prontos serão disponibilizadas em novos diretórios, seguindo a mesma lógica.
