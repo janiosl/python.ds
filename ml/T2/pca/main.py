@@ -19,7 +19,7 @@ def pca(X):
 	# da matriz de covariância de X.
 	########################
 	#Define m como o número de exemplos de X
-	m = X_norm.shape[0]
+	m = X.shape[0]
 
 	#Calcula a matriz de covariância
 	mc = (1/m) * np.dot(X, X.T)
