@@ -43,9 +43,19 @@ def cofi_cost_func(params, Y, R, num_users, num_movies, num_features, Lambda):
     #   derivadas parciais com relacao a cada elemento de X
     X_grad = np.dot(( np.dot(X, Theta.T) - Y ) * R, Theta)
 
+    #Linha adicionada apenas para conferir se a matriz gerada
+    #tem as dimensões corretas. DESATIVADA APÓS VALIDAÇÃO
+    #RESULTADO VALIDADO: (5, 3)
+    #print(X_grad, X_grad.shape)
+
     # Theta_grad - num_users x num_features: matriz, contendo as
     #   derivadas parciais com relacao a cada elemento de Theta
     Theta_grad = np.dot((( np.dot(X, Theta.T) - Y ) * R).T, X)
+
+    #Linha adicionada apenas para conferir se a matriz gerada
+    #tem as dimensões corretas. DESATIVADA APÓS VALIDAÇÃO
+    #RESULTADO VALIDADO: (4, 3)
+    #print(Theta_grad, Theta_grad.shape)
 
     # =============================================================
     #Gradiente para ambos os cojuntos em um único vetor
