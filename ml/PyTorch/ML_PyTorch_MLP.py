@@ -7,7 +7,6 @@ import torch.nn.functional as F
 ##============================================
 class Net_(nn.Module):
   # Define nn
-  #def __init__(self, neur):
   def __init__(self, dimX, nC, neur):
     """
     Definição da Redeu Neural
