@@ -43,7 +43,8 @@ sleep(0.5)
 click()
 
 #Passo 4 (PRINCIPAL): INSCRIÇÃO NO CANAL Python DS
-moveTo(246, 107)
+moveTo(246, 107, duration=1)
+sleep(0.5)
 click()
 sleep(0.5)
 typewrite(termo)
