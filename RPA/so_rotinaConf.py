@@ -1,7 +1,7 @@
 """
 #Simulação de rotina de conferência diária de arquivos!
 #Python DS
-#Tutorial para uso do código:
+#Tutorial para uso do código: https://youtu.be/meMV1fed0PM
 """
 #Importação de bibliotecas
 #============================
