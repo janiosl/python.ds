@@ -68,9 +68,9 @@ class Matriz:
         #Linhas --> M2.n, Colunas --> self.m
         if not self.m == M2.n:
             return 'Impossível calcular: Dimensões incompatíveis'
-        c = self.n
-        l = M2.m
-        M3 = Matriz(c,l)
+        l = self.n
+        c = M2.m
+        M3 = Matriz(l,c)
         M3.set_matriz()
         return M3
     
