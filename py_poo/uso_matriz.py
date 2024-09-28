@@ -91,6 +91,8 @@ Z
 Z.fill_matriz([3,3,3,3,3,3])
 A.get_matriz()
 A * Z
+#Matriz 3 linhas x 3 colunas
+#[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
 newA = Matriz(3,2)
 newA.set_matriz()
@@ -98,3 +100,5 @@ newB = Matriz(2,5)
 newB.set_matriz()
 AB = newA * newB
 AB
+#Matriz 3 linhas x 5 colunas
+#[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
