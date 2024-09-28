@@ -39,15 +39,15 @@ class Matriz:
                 v += 1
         return self.matriz
     
+    def __repr__(self):
+        return f'Matriz {self.n} linhas x {self.m} colunas\n{self.matriz}'
+    
     def mult_diag(self, k):
         if self.n != self.m:
             return 'Operação inválida para matrizes não quadradas'
         for i in range(len(self.matriz)):
             self.matriz[i][i] *= k
         return self.matriz
-    
-    def __repr__(self):
-        return f'Matriz {self.n} linhas x {self.m} colunas\n{self.matriz}'
     
     def __add__(self, M2):
         if self != M2:
@@ -66,7 +66,7 @@ class Matriz:
         #Número de colunas de A deve ser igual ao número de linhas de B
         #Matriz resultante é números de linhas da matriz A e colunas de B
         #Colunas --> self.n, Linhas --> M2.m
-        if not self.n == M2.m:
+        if not self.m == M2.n:
             return 'Impossível calcular: Dimensões incompatíveis'
         c = self.n
         l = M2.m
