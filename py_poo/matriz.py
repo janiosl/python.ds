@@ -95,20 +95,3 @@ class Matriz:
         if self.n == M2.n and self.m == M2.m:
             return True
         return False
-
-
-'''
-def multiplica(Ma,Mb):
-    if len(Ma[0]) != len(Mb):
-        return "Nao da pra multiplicar"
-    else:
-        C = []
-        for i in range(len(Ma)):
-            C.append([0] * len(Mb[0]))
-
-        for l in range(len(C)):
-            for c in range(len(C[0])):
-                for k in range(len(C)):
-                    C[l][c] += Ma[l][k] * Mb[k][c]
-        return C
-'''
