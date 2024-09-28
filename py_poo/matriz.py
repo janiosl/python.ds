@@ -62,7 +62,7 @@ class Matriz:
         return M3
     
     def __mul__(self, M2):
-        #Under construction - Code does not implement matrix multiplication
+        #Em construção-Código ainda não implementa a multiplicação de matrizes
         #Número de colunas de A deve ser igual ao número de linhas de B
         #Matriz resultante é números de linhas da matriz A e colunas de B
         #Colunas --> self.n, Linhas --> M2.m
