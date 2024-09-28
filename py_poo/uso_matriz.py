@@ -66,19 +66,18 @@ Original
 
 #Adição de matrizes
 A.get_matriz()
+B.get_matriz()
+A + B
+#'Impossível calcular: Dimensões diferentes'
+
 C.get_matriz()
 A.__add__(C)
-A + B
+
 A + C
 
 N = A + C
 N
 #[[7, 7], [7, 7], [7, 7]]
-
-J = Matriz(2,2)
-J
-Matriz(3,3)
-Matriz(1,1)
 
 
 #Multiplicação de matrizes
