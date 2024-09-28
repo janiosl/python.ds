@@ -13,8 +13,7 @@ A.get_dim()
 A.get_matriz()
 #Preenchimento da matriz de zeros
 A.set_matriz()
-
-#Preenchimento direto da matriz
+#Preenchimento de valores na matriz anteriormente preechida com zeros
 A.fill_matriz([1,2,3,4,5,6])
 A.get_matriz()
 print(A)
@@ -23,10 +22,9 @@ print(A)
 B = Matriz()
 B.get_matriz()
 len(B.get_matriz())
-#Preenchimento de valores na matriz anteriormente preechida com zeros
+#Preenchimento direto da matriz
 B.fill_matriz([1])
 print(B)
-
 
 #Criação da matriz C
 C = Matriz(3,2)
@@ -36,22 +34,20 @@ C.get_matriz()
 print(C)
 
 
+#Operações entre matrizes
 #Comparação de dimensões de matrizes
 A == C
 A == B
 C == B
 
-#Operações entre matrizes
 
 #Multiplicação diagonal por escalar
 A.get_matriz()
 len(A.get_matriz())
 A.mult_diag(2)
-
 D = Matriz(4,4)
 D.fill_matriz(list(range(16)))
 print(D)
-
 D.mult_diag(2)
 
 '''
@@ -71,11 +67,9 @@ Original
 #Adição de matrizes
 A.get_matriz()
 C.get_matriz()
-
 A.__add__(C)
 A + B
 A + C
-
 
 N = A + C
 N
@@ -85,6 +79,7 @@ J = Matriz(2,2)
 J
 Matriz(3,3)
 Matriz(1,1)
+
 
 #Multiplicação de matrizes
 A * C
