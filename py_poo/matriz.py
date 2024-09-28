@@ -66,15 +66,49 @@ class Matriz:
         #Número de colunas de A deve ser igual ao número de linhas de B
         #Matriz resultante é números de linhas da matriz A e colunas de B
         #Linhas --> M2.n, Colunas --> self.m
+        #Há um bug para alguns casos - Verificando
         if not self.m == M2.n:
             return 'Impossível calcular: Dimensões incompatíveis'
+        
         l = self.n
         c = M2.m
         M3 = Matriz(l,c)
         M3.set_matriz()
+        
+        Ma = list(self.matriz)
+        Mb = list(M2.matriz)
+        
+        for l in range(len(M3.matriz)):
+            print('Linha', l)
+            for c in range(len(M3.matriz[0])):
+                print('    Coluna', c)
+                for k in range(len(M3.matriz)):
+                    print('      Item k', k)
+                    print(Ma[l][k])
+                    #pass
+                    M3.matriz[l][c] += Ma[l][k] * Mb[k][c]
+            print('*' * 40)
+        
         return M3
     
     def __eq__(self, M2):
         if self.n == M2.n and self.m == M2.m:
             return True
         return False
+
+
+'''
+def multiplica(Ma,Mb):
+    if len(Ma[0]) != len(Mb):
+        return "Nao da pra multiplicar"
+    else:
+        C = []
+        for i in range(len(Ma)):
+            C.append([0] * len(Mb[0]))
+
+        for l in range(len(C)):
+            for c in range(len(C[0])):
+                for k in range(len(C)):
+                    C[l][c] += Ma[l][k] * Mb[k][c]
+        return C
+'''
