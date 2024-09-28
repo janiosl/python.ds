@@ -65,7 +65,7 @@ class Matriz:
         #Em construção-Código ainda não implementa a multiplicação de matrizes
         #Número de colunas de A deve ser igual ao número de linhas de B
         #Matriz resultante é números de linhas da matriz A e colunas de B
-        #Colunas --> self.n, Linhas --> M2.m
+        #Linhas --> M2.n, Colunas --> self.m
         if not self.m == M2.n:
             return 'Impossível calcular: Dimensões incompatíveis'
         c = self.n
