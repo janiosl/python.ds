@@ -13,6 +13,8 @@ class Matriz:
         self.matriz = matriz
         
     def set_matriz(self):
+        if (len(self.get_matriz())) != 0:
+            return 'Matriz já preenchida com valores'
         self.matriz = []
         for i in range(self.n):
             linha = []
