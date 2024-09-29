@@ -34,6 +34,12 @@ C.get_matriz()
 print(C)
 
 
+#Preenchimento de matriz com valores na criação
+T = Matriz(2,3,[[1,2,3],[3,2,1]])
+T
+
+T.set_matriz()
+
 #Operações entre matrizes
 #Comparação de dimensões de matrizes
 A == C
@@ -91,6 +97,7 @@ Z
 Z.fill_matriz([3,3,3,3,3,3])
 A.get_matriz()
 A * Z
+### BUG - CORRIGIR ###
 #Matriz 3 linhas x 3 colunas
 #[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
@@ -100,5 +107,17 @@ newB = Matriz(2,5)
 newB.set_matriz()
 AB = newA * newB
 AB
+### BUG - CORRIGIR ###
 #Matriz 3 linhas x 5 colunas
 #[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+
+A = Matriz(2,2)
+A.fill_matriz([3,2,5,-1])
+A
+
+B = Matriz(2,3)
+B.fill_matriz([6,4,-2,0,7,1])
+B
+
+A * B
