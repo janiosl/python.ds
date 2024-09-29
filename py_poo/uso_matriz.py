@@ -83,6 +83,7 @@ A + C
 
 N = A + C
 N
+#Correto - Resultado:
 #[[7, 7], [7, 7], [7, 7]]
 
 
@@ -98,19 +99,7 @@ Z.fill_matriz([3,3,3,3,3,3])
 A.get_matriz()
 A * Z
 ### BUG - CORRIGIR ###
-#Matriz 3 linhas x 3 colunas
-#[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-
-newA = Matriz(3,2)
-newA.set_matriz()
-newB = Matriz(2,5)
-newB.set_matriz()
-AB = newA * newB
-AB
-### BUG - CORRIGIR ###
-#Matriz 3 linhas x 5 colunas
-#[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-
+#IndexError: list index out of range
 
 A = Matriz(2,2)
 A.fill_matriz([3,2,5,-1])
@@ -121,3 +110,15 @@ B.fill_matriz([6,4,-2,0,7,1])
 B
 
 A * B
+#Correto - Resultado:
+#[[18, 26, -4], [30, 13, -11]]
+
+newA = Matriz(3,2)
+newA.set_matriz()
+newB = Matriz(2,5)
+newB.set_matriz()
+AB = newA * newB
+
+AB
+### BUG - CORRIGIR ###
+#IndexError: list index out of range
