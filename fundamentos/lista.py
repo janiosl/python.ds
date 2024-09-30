@@ -1,6 +1,19 @@
 #Criação de lista
 lista = [1,3,5,7]
 print(lista)
+lista
+
+
+#Listas de diferentes tipos de dados
+ls = [1,3,'janio', 3.5, True, False]
+ls
+
+ls = ['Janio', 43, 'João', 27, 'Maria', 30]
+ls
+
+
+for i in range(1, len(ls), 2):
+    print(ls[i])
 
 #Acessar um item da lista por sua posição
 lista[0] #Primeiro item da lista
@@ -28,7 +41,10 @@ lista.append(9)
 
 #Adiciona um item em um índice específico da lista
 lista.insert(0, 0) #Adiciona na posição 0 o valor 0
+#[0, 1, 3, 5, 7, 9]
+
 lista.insert(1,2) #Adiciona na posição 1 o valor 2
+#[0, 2, 1, 3, 5, 7, 9]
 
 #Criação de uma lista a partir de outra
 dobro = []
@@ -49,6 +65,7 @@ frutas.append('repolho')
 frutas.insert(1, 'mamão')
 print(frutas)
 
+
 #Remover um item específico da lista pela localização
 #Descobrir a localização de um item na lista
 frutas.index('alface')
@@ -66,7 +83,19 @@ print(frutas)
 #Não gosto de mamão
 frutas[1]
 del frutas[1]
+
 print(frutas)
+
+for fruta in frutas:
+    if fruta == 'mamão':
+        print(f'A fruta {fruta} é igual a mamão')
+        idx = frutas.index(fruta)
+        del frutas[idx]
+        print('Fruta removida da cesta')
+    else:
+        print(f'A fruta {fruta} é diferente de mamão')
+        print('Fruta mantida na cesta')
+
 
 #Remover último item da lista
 #Repolho não é fruta
@@ -83,6 +112,7 @@ lista[2] = 5
 lista[1] = 4
 print(lista)
 
+
 #Ordenando listas
 lista.sort()
 print(lista)
@@ -92,6 +122,7 @@ print(frutas)
 
 #Contando itens em uma lista
 frutas.count('banana')
+frutas.append('banana')
 lista.count(1)
 lista.count(0)
 lista.count(9)
@@ -99,6 +130,7 @@ lista.count(9)
 #Outra forma de criar lista a partir de lista
 #Listcomp
 triplo = [x * 3 for x in lista]
+
 print(triplo)
 print(lista)
 
@@ -110,5 +142,6 @@ print(lista)
 #Invertendo a ordem em uma lista
 lista.reverse()
 print(lista)
+
 frutas.reverse()
 print(frutas)
