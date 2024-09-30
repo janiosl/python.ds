@@ -19,7 +19,6 @@ for item in lista:
     print(item * 2)
 
     
-
 #Operações com valores da lista
 lista[0] = 0 #Altera o valor do item 0 da lista
 lista[0] += 1
@@ -47,17 +46,25 @@ print(frutas)
 frutas.append('abacaxi')
 frutas.append('alface')
 frutas.append('repolho')
-frutas.insert(1, 'mamaão')
-
+frutas.insert(1, 'mamão')
 print(frutas)
 
-#Remover um item específico da lista
+#Remover um item específico da lista pela localização
+#Descobrir a localização de um item na lista
+frutas.index('alface')
+frutas[5]
+frutas[-2]
+
+frutas.index('mamão')
+frutas[1]
+
 #Alface não é fruta
 frutas[-2]
 del frutas[-2]
 print(frutas)
 
 #Não gosto de mamão
+frutas[1]
 del frutas[1]
 print(frutas)
 
@@ -66,9 +73,42 @@ print(frutas)
 frutas.pop()
 print(frutas)
 
-#Descobrir a localização de um item na lista
-frutas.index('banana')
-frutas[0]
-frutas.index('uva')
-frutas[2]
 
+#Desorganizando um pouco a lista anterior
+lista
+lista.append(0)
+lista.append(3)
+lista.append(33)
+lista[2] = 5
+lista[1] = 4
+print(lista)
+
+#Ordenando listas
+lista.sort()
+print(lista)
+
+frutas.sort()
+print(frutas)
+
+#Contando itens em uma lista
+frutas.count('banana')
+lista.count(1)
+lista.count(0)
+lista.count(9)
+
+#Outra forma de criar lista a partir de lista
+#Listcomp
+triplo = [x * 3 for x in lista]
+print(triplo)
+print(lista)
+
+#Removendo um item pelo seu conteúdo - Apenas primeiro item encontrado
+lista.remove(3)
+lista.remove(0)
+print(lista)
+
+#Invertendo a ordem em uma lista
+lista.reverse()
+print(lista)
+frutas.reverse()
+print(frutas)
