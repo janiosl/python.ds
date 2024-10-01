@@ -5,13 +5,14 @@ Created on Mon Sep 30 21:10:19 2024
 @author: janio
 """
 
+#Criando conjunto a partir de uma lista
 lista = [0, 2, 1, 4, 5, 7, 0, 3, 33, 9]
 set(lista)
 
 sem_duplicatas = set(lista)
 sem_duplicatas
 
-
+#Criando conjunto do zero
 cj = {0,10,2,1}
 cj
 
@@ -21,15 +22,13 @@ cj
 #Conjunto de letras não repetidas
 set('abracadabra')
 
-dir(set)
-
 cj.pop()
 cj
 
 cj.remove(77)
 cj
 
-
+#Outro exemplo a partir de uma lista
 frutas = ['banana', 'uva', 'maça', 'banana', 'abacaxi']
 frutas
 set(frutas)
@@ -40,6 +39,8 @@ frutas
 vegetais = {'abacaxi', 'banana', 'maça', 'uva', 'alface', 'repolho', 'batata'}
 vegetais
 
+
+#Operações com conjuntos
 #Diferença de conjuntos
 vegetais - frutas
 frutas - vegetais
