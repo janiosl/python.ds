@@ -6,8 +6,10 @@ Created on Mon Sep 30 21:10:19 2024
 """
 
 #Criando conjunto a partir de uma lista
-lista = [0, 2, 1, 4, 5, 7, 0, 3, 33, 9]
+lista = [0, 2, 1, 33, 4, 5, 7, 0, 3, 33, 9, 2]
 set(lista)
+tuple(lista)
+
 
 sem_duplicatas = set(lista)
 sem_duplicatas
@@ -22,6 +24,7 @@ cj
 #Conjunto de letras não repetidas
 set('abracadabra')
 
+#Operações com conjuntos
 cj.pop()
 cj
 
@@ -40,7 +43,7 @@ vegetais = {'abacaxi', 'banana', 'maça', 'uva', 'alface', 'repolho', 'batata'}
 vegetais
 
 
-#Operações com conjuntos
+#Operações com conjuntos - Continuação
 #Diferença de conjuntos
 vegetais - frutas
 frutas - vegetais
