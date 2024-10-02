@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep 30 21:10:19 2024
-
+Python DS - Conjuntos (set)
 @author: janio
 """
 
