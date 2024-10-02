@@ -76,3 +76,10 @@ print(joao_e_maria)
 for k,v in joao_e_maria.items():
     print(f'Personagem: {k}.\nCaracterísticas:\n    Papel: {v[0]}, Idade: {v[1]}, Poder: {v[2]}')
 
+#Remover último item
+joao_e_maria.popitem()
+print(joao_e_maria)
+
+#Remover item pela chave
+joao_e_maria.pop('João')
+print(joao_e_maria)
