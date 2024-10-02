@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Python DS - Lista (list)
+@author: janio
+"""
+
 #Criação de lista
 lista = [1,3,5,7]
 print(lista)
