@@ -209,6 +209,7 @@ class Evento:
         p = f'Parameters: mu={self.pr[0]}, sigma={self.pr[1]}\n'
         l = f'Threshold: {self.lim}\n'
         if self.type_sens == True:
+            p = f'Parameters: sensitivity={self.sens}, mu={self.pr[0]}, sigma={self.pr[1]}\n'
             t = 'Detection based on sensitivity - '
         else:
             t = 'Detection based on IQR - '
