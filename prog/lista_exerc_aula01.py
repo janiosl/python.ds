@@ -80,7 +80,7 @@ gorjeta_div(520, 3)
 area_cubo(3)
 area_cubo(9)
 
-#Funções da aula 01 - Slides 21 a 23
+#Funções da aula 01 - Slides 39 a 41
 #====================================================
 
 #Questão 1a - Calcular média de quatro números (usar função média de 2 números)
@@ -102,3 +102,36 @@ fun_bb(25, 2)
 div_rest(7, 0.75)
 div_rest(25, 2)
 
+
+#Questão 2a - Calcular hipotenusa dados os catetos
+hipotenusa(4,3)
+hipotenusa(6,8)
+hipotenusa(9,12)
+
+
+#Questão 2b - Distância no plano carteseano
+distancia_plano(3,5,6,1)
+distancia_plano(-3,2, 3,-2)
+distancia_plano(-2,13,6,7)
+
+
+#Questão 2c - Perímetro de triângulo reto dados os catetos
+perimetro_tri(4,3)
+perimetro_tri(6,8)
+perimetro_tri(9,12)
+
+
+#Questão 2d
+#Questão 2e
+
+
+#Questão 3 - Comprimento do círculo
+comprimento_circ(4)
+comprimento_circ(5)
+comprimento_circ(15)
+
+
+#Questão 4 - Voltas em pista circular
+voltas(4,50)
+voltas(4,60)
+voltas(15,300)
