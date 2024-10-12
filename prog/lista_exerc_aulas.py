@@ -135,3 +135,40 @@ comprimento_circ(15)
 voltas(4,50)
 voltas(4,60)
 voltas(15,300)
+
+
+#Funções da aula 04 - Slides 24 a 25
+#====================================================
+#Questão 1
+prime_div(4)
+prime_div(5)
+prime_div(8)
+prime_div(9)
+prime_div(7)
+
+
+#Questão 2
+soma_n_imp(7)
+soma_n_imp(3)
+soma_n_imp(13)
+
+
+#Questão 3
+soma_fatorial()
+
+#Questão 4
+#Questão 5
+
+#Questão 6
+cont_div(10)
+cont_div(7)
+cont_div(8)
+cont_div(5)
+cont_div(1)
+
+
+#Questão 7
+cont_letra('casa', 'a')
+cont_letra('janio', 'o')
+cont_letra('a casa de janio', 'a')
+cont_letra('a casa de janio', 'j')
