@@ -140,6 +140,31 @@ def bombons(dinheiro, preco):
 fun_bb = div_rest
 
 
+#Questão 2a - Calcular hipotenusa dados os catetos
+def hipotenusa(c1, c2):
+    from math import pow, sqrt
+    return sqrt(pow(c1, 2) + pow(c2, 2))
+
+
+#Questão 2b - Distância no plano carteseano
+def distancia_plano(xa, ya, xb, yb):
+    from math import pow, sqrt
+    return sqrt(pow(xb-xa, 2)+pow(yb-ya,2))
+
+
+#Questão 2c - Perímetro de triângulo reto dados os catetos
+def perimetro_tri(c1, c2):
+    return c1 + c2 + hipotenusa(c1, c2)
+
+
+#Questão 3 - Comprimento do círculo
+def comprimento_circ(r):
+    PI = 3.14
+    return 2*PI*r
+
+
+def voltas(r,dist):
+    return dist / comprimento_circ(r)
 
 
 #Funções da aula 02
