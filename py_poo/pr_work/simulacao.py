@@ -238,11 +238,11 @@ def main():
         
     #Cria série a partir de arquivo
     print('\nSérie a partir de arquivo')
-    #arquivo = 'https://raw.githubusercontent.com/janiosl/python.ds/refs/heads/master/data/weather_rj_daily_10082024_synt_cp.csv'
-    arquivo = 'condies-dirias-10082024.csv'
+    arquivo = 'https://raw.githubusercontent.com/janiosl/python.ds/refs/heads/master/data/weather_rj_daily_10082024_synt_cp.csv'
+    #arquivo = 'condies-dirias-10082024.csv'
     clima = pd.read_csv(arquivo)
     clima = clima.dropna(thresh=2)
-    temp = GeraTS(list(clima.Temperatura))
+    temp = GeraTS(list(clima.Temperature))
     temp.head()
     
     #Adiciona ponto de mudança em série já criada
@@ -287,6 +287,7 @@ def main():
     ev_sim.det_graf(cp_lines=False)
     print(ev_sim)
     print (' ------- FIM SIMULAÇÃO ------- \n')
+
     
 if __name__ == "__main__":
     main()
