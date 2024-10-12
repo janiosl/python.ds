@@ -169,3 +169,58 @@ def voltas(r,dist):
 
 #Funções da aula 02
 #====================================================
+
+#Funções da aula 04 - Slides 24 a 25
+#====================================================
+#Questão 1
+def prime_div(num):
+    div = 2
+    while (num%div != 0):
+        div += 1
+    return div
+
+
+#Questão 2
+def soma_n_imp(n):
+    soma = 0
+    for i in range(1,n+1,2):        
+        soma += i
+        print(i, soma)
+    return soma
+    
+
+#Questão 3
+def fatorial(num):
+    fatorial = 1
+    for i in range(num,0,-1):
+        fatorial *= i
+    return fatorial
+
+
+def soma_fatorial():
+    soma_fat = 0
+    for i in range(1,11):
+        print(i, '->', fatorial(i))
+        soma_fat += fatorial(i)
+    return soma_fat
+
+
+#Questão 4
+#Questão 5
+
+#Questão 6
+def cont_div(num):
+    cont = 0
+    for i in range(num,0,-1):        
+        if (num % i == 0):
+            cont += 1    
+    return cont
+
+
+#Questão 7
+def cont_letra(frase, letra):
+    cont = 0
+    for l in frase:
+        if l == letra:
+            cont += 1
+    return cont
