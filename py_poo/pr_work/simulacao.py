@@ -12,15 +12,18 @@ from matplotlib import pyplot as plt
 
 #Class for time series generation
 class GeraTS:
+    """Time series generator"""
     def __init__(self, serie=[]):
         self.serie = serie
         self.cp = []
         self.chg = []
         
     def gera_aleatoria(self, tamanho):
+        """Generate a random time series with a normal distribution"""
         self.serie = np.random.randn(tamanho)
         
     def gera_cp(self, tamanho, lim, chg_size, positive=False):
+        """Generate a random time series with values between lim[0] and lim[1]"""
         #Define parâmetros da série
         if tamanho > 30:
             start = 7
@@ -48,6 +51,7 @@ class GeraTS:
         self.chg.append(chg)
         
     def add_cp(self, chg_size, new_points, positive=False):
+        """Add synthetic change points to the time series"""
         if positive == True:
             chg = (100 + random.randrange(chg_size[0],chg_size[1]))/100
         else:
@@ -66,6 +70,7 @@ class GeraTS:
         self.chg.append(chg)
     
     def grafico(self):
+        """Generates a time series line plot"""
         plt.plot(self.serie)
         for c in self.cp:
             plt.axvline(x=c, ymin=0, ymax=1, c = 'gray', ls = '--')
@@ -76,9 +81,11 @@ class GeraTS:
         #plt.close()
         
     def head(self, rows=5):
+        """Displays the first rows of the time series"""
         print(self.serie[:rows])
     
     def tail(self, rows=5):
+        """Displays the last rows of the time series"""
         print(self.serie[-rows:])
         
     def __repr__(self):
@@ -87,6 +94,7 @@ class GeraTS:
 
 #Class for time series event detection
 class Evento:
+    """Time series event detector"""
     def __init__(self, s=GeraTS()):
         self.serie = s.serie
         self.cp = s.cp
@@ -97,6 +105,7 @@ class Evento:
         self.lim = [None, None]
         
     def det_param(self, pointer=30):
+        """Calculates mean and standard deviation detection parameters"""
         mu_base = np.mean(self.serie[:pointer])
         std_base = np.std(self.serie[:pointer])
         
@@ -106,6 +115,7 @@ class Evento:
         return mu_base, std_base
     
     def lim_calc(self, pr, sensitivity=0.2, type_sens = False):
+        """Calculates the upper and lower limits of the detection threshold"""
         if type_sens == True:
             self.sens = sensitivity
             if sensitivity > 1:
@@ -117,6 +127,7 @@ class Evento:
         return lim
     
     def det_graf(self, cp_lines=True):
+        """Generates a graph with the detection result"""
         if self.ev == None: return 'There are no events detected yet.'
         
         ev_value = [self.serie[i] for i in self.ev]
@@ -148,6 +159,7 @@ class Evento:
         #plt.close()
 
     def detector(self, type_sens = False, w_size=30, sensitivity=0.2, adaptive=False):
+        """Detect events in the time series"""
         self.type_sens = type_sens
         serie = self.serie
         #Step 1 - Initialize event vector
@@ -202,6 +214,7 @@ class Evento:
         return ev, pr, lim
     
     def metricas(self, reference):
+        """Under construction"""
         m = []
         return m
     
@@ -297,9 +310,10 @@ def main():
     gecco = 'gecco.csv'
     df = pd.read_csv(gecco)
     ph = GeraTS(df.ph)
+    
+    #Detecção de eventos na série real
     ev_ph = Evento(ph)
-    
-    
+    ev_ph.detector()
     
     print (' ------- FIM SIMULAÇÃO ------- \n')
 
