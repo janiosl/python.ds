@@ -89,6 +89,7 @@ class GeraTS:
 class Evento:
     def __init__(self, s=GeraTS()):
         self.serie = s.serie
+        self.cp = s.cp
         self.ev = None
         self.sens = None
         self.type_sens = False
@@ -141,12 +142,12 @@ class Evento:
             plt.title('IQR statistics-based detection of outliers')
             plt.annotate(f'Sigma={round(self.pr[1], 2)}', xy=(150,50))
         if cp_lines == True:
-            for c in scp.cp:
+            for c in self.cp:
                 plt.axvline(x=c, ymin=0, ymax=1, c = 'gray', ls = '--')
         
         #plt.close()
 
-    def detector(self, type_sens = False, w_size=30, sensitivity=0.2, offline=True):
+    def detector(self, type_sens = False, w_size=30, sensitivity=0.2, adaptive=False):
         self.type_sens = type_sens
         serie = self.serie
         #Step 1 - Initialize event vector
@@ -154,7 +155,7 @@ class Evento:
         
         #Step 2 - Set initial parameters
         #    Step 2.1 - Calc mean and standard deviation
-        if offline == True:
+        if adaptive == False:
             mu_base = np.mean(serie)
             std_base = np.std(serie)
         else:
@@ -184,9 +185,9 @@ class Evento:
             if pointer % w_size == 0:
                 batch += 1
                 print(f'\n    Batch changed. Current batch={batch}')
-                if offline == False:
+                if adaptive == True:
                     #    Step 3.3 - Check new batches and update parameters
-                    print('Mode online under construction...')
+                    #print('Mode online under construction...')
                     pr = self.det_param(pointer)
                     lim = self.lim_calc(pr, sensitivity, type_sens)
                     print(f'New threshold: {lim}')
@@ -225,7 +226,9 @@ def main():
     global sa
     global scp
     global temp
+    global ph
     global ev_sim
+    global ev_ph
     
     ## ------ Testando o código ------
     ## ------ Simulação de Séries temporais e adição de pontos de mudança ----
@@ -250,7 +253,6 @@ def main():
     temp.add_cp([30,50], 0.5, True)
     print(temp)
 
-
     ## ------ Simulando Mudanças ------
     #Cria série com ponto de mudança definido por limites arbitrários
     print('\nSérie com ponto de mudança definido por limites arbitrários')
@@ -265,7 +267,7 @@ def main():
     #Eventos de ponto de mudança a serem adicionados na série
     eventos_cp = [[(30,60), 0.5, True], [(30,60), 0.25, False], [(30,60), 0.125, False]]
     
-    #Loope principal da simulação
+    #Loop principal da simulação
     while len(eventos_cp) != 0:
         print('Ocorreu mudança na série')
         m = eventos_cp.pop()
@@ -284,9 +286,21 @@ def main():
     ev_sim = Evento(scp)
     print('Empty object with event detector')
     print(ev_sim)
-    ev_sim.detector(type_sens=True, sensitivity=0.4, offline=False)
+    ev_sim.detector(type_sens=True, sensitivity=0.4, adaptive=True)
     ev_sim.det_graf(cp_lines=False)
     print(ev_sim)
+    print (' ------- FIM SIMULAÇÃO ------- \n')
+    
+    ## ------ Simulação da detecção de eventos em série real ----
+    print ('\n ------- SIMULAÇÃO DETECTOR - DADOS REAIS ------- ')
+    #Carrega série a partir de arquivo já com eventos
+    gecco = 'gecco.csv'
+    df = pd.read_csv(gecco)
+    ph = GeraTS(df.ph)
+    ev_ph = Evento(ph)
+    
+    
+    
     print (' ------- FIM SIMULAÇÃO ------- \n')
 
     
