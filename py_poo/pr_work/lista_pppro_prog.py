@@ -280,8 +280,126 @@ voltas(4,60)
 voltas(15,300)
 
 
-#Funções da aula 02
+#Funções da aula 02 - Slides 17 a 19
 #====================================================
+#Questão 1
+def absoluto(num):
+    if num < 0:
+        return num * -1
+    return num
+
+
+#Aplicação
+absoluto(5)
+absoluto(-3)
+absoluto(0)
+absoluto(3)
+
+
+#Questão 2
+def raizes_sg(a,b,c):
+    raizes = []
+    #Equaçao do segundo grau: ax**2 + bx + c'
+    if(a==0):
+        print('Coeficiente a=0. Não há raízes')
+        q = 0
+    else:
+        d = b*b - (4*a*c)
+        
+        if d<0:
+            print('Delta menor que 0. Raízes imaginárias')
+            q = 0
+        elif d==0:
+            raiz = -b / (2*a)
+            print('Delta=0 , raiz = ',raiz)
+            raizes.append(raiz)
+            q = 1
+        else:
+            raiz1 = (-b + d**(1/2)) / (2*a)
+            raizes.append(raiz1)
+            raiz2 = (-b - d**(1/2)) / (2*a)
+            raizes.append(raiz2)
+            print('Raizes: ',raiz1,' e ',raiz2)
+            
+            q = 2
+    return q, raizes
+
+
+#Aplicação
+raizes_sg(0,2,3)
+raizes_sg(1,2,3)
+raizes_sg(10,13,2)
+raizes_sg(1,3,2)
+
+
+#Questão 3
+def rep_palavra(p):
+    return 3*p
+
+
+#Aplicação
+rep_palavra('janio')
+rep_palavra('casa')
+rep_palavra('águia')
+
+#Questão 4
+#Questão 5
+def min_max(n1,n2):    
+    print(f'Mínimo: {min(n1,n2)}')
+    print(f'Máximo: {max(n1,n2)}')
+    return min(n1,n2), max(n1,n2)
+
+
+#Aplicação
+min_max(2,5)
+min_max(33,2)
+min_max(7,33)
+
+#Questão 6
+def meia(idade, rg=True, estudante=False):
+    direito = False
+    if rg == True:
+        if idade < 21 or idade >= 65:
+            direito = True            
+        elif estudante == True:
+            direito = True
+    
+    return direito
+
+
+#Aplicação
+meia(18)
+meia(65)
+meia(66)
+meia(66, rg=False)
+meia(50)
+meia(50, estudante=True)
+meia(43, estudante=True)
+
+
+#Funções da aula 02 - Slides 40 a 43
+#====================================================
+#Questão 1
+def analise_nome(nome):
+    print(f'{nome} tem {len(nome)} letras e começa com {nome[0]}')
+    return len(nome), nome[0]
+
+
+#Aplicação
+analise_nome('Janio de Souza Lima')
+analise_nome('Cecilia')
+
+
+#Questão 2
+def inverte(p):
+    return p[::-1]
+
+
+#Aplicação
+inverte('casa')
+inverte('caneca')
+inverte('tv')
+
 #Funções da aula 03
 #====================================================
 
