@@ -118,8 +118,6 @@ class Evento:
         """Calculates the upper and lower limits of the detection threshold"""
         if type_sens == True:
             self.sens = sensitivity
-            if sensitivity > 1:
-                return '- Sensitivity invalid. It must be between 0 and 1'
             lim = (pr[0] * (1+(1-sensitivity)), pr[0] * sensitivity)
         else:
             lim = (pr[0] + 1.5*pr[1], pr[0] - 1.5*pr[1])
@@ -127,6 +125,10 @@ class Evento:
         return lim
     
     def detector(self, type_sens = False, w_size=30, sensitivity=0.2, adaptive=False):
+        if type_sens == True:
+            if sensitivity < 0 or sensitivity > 1:
+                return '*** Sensitivity invalid. It must be between 0 and 1 ***'
+        
         """Detect events in the time series"""
         self.type_sens = type_sens
         serie = self.serie
