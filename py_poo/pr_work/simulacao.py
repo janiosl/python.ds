@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Time series generator
+Time series generator and event detector
 @author: janio
 """
 import random
@@ -126,38 +126,6 @@ class Evento:
         
         return lim
     
-    def det_graf(self, cp_lines=True):
-        """Generates a graph with the detection result"""
-        if self.ev == None: return 'There are no events detected yet.'
-        
-        ev_value = [self.serie[i] for i in self.ev]
-        ev_dic = dict(zip(self.ev, ev_value))
-
-        print('Events detected:', len(self.ev))
-        print(f'Initial parameters: mu={self.pr[0]}, sigma={self.pr[1]}')
-        print('Threshold', self.lim)
-
-        plt.plot(self.serie, label = 'Values')
-        plt.ylabel('Time')
-        plt.xlabel('Values')
-        plt.axhline(y=self.pr[0], c = 'red', ls = '--', label='Mean')
-        plt.axhline(y=self.lim[0], c = 'gray', label = 'Threshold')
-        plt.axhline(y=self.lim[1], c = 'gray')
-        for k,v in ev_dic.items():
-            plt.plot(k, v, marker='o', c = 'green')
-        plt.legend(loc='best')
-        if self.type_sens == True:
-            plt.title('Sensitivity-based detection')
-            plt.annotate(f'Sensitiviry={self.sens}', xy=(150,50))
-        else:
-            plt.title('IQR statistics-based detection of outliers')
-            plt.annotate(f'Sigma={round(self.pr[1], 2)}', xy=(150,50))
-        if cp_lines == True:
-            for c in self.cp:
-                plt.axvline(x=c, ymin=0, ymax=1, c = 'gray', ls = '--')
-        
-        #plt.close()
-
     def detector(self, type_sens = False, w_size=30, sensitivity=0.2, adaptive=False):
         """Detect events in the time series"""
         self.type_sens = type_sens
@@ -198,8 +166,7 @@ class Evento:
                 batch += 1
                 print(f'\n    Batch changed. Current batch={batch}')
                 if adaptive == True:
-                    #    Step 3.3 - Check new batches and update parameters
-                    #print('Mode online under construction...')
+                    #    Step 3.3 - Check new batches and update parameters                    
                     pr = self.det_param(pointer)
                     lim = self.lim_calc(pr, sensitivity, type_sens)
                     print(f'New threshold: {lim}')
@@ -212,6 +179,36 @@ class Evento:
         self.lim = lim
             
         return ev, pr, lim
+
+    def det_graf(self, cp_lines=True):
+        """Generates a graph with the detection result"""
+        if self.ev == None: return 'There are no events detected yet.'
+        
+        ev_value = [self.serie[i] for i in self.ev]
+        ev_dic = dict(zip(self.ev, ev_value))
+
+        print('Events detected:', len(self.ev))
+        print(f'Initial parameters: mu={self.pr[0]}, sigma={self.pr[1]}')
+        print('Threshold', self.lim)
+
+        plt.plot(self.serie, label = 'Values')
+        plt.ylabel('Time')
+        plt.xlabel('Values')
+        plt.axhline(y=self.pr[0], c = 'red', ls = '--', label='Mean')
+        plt.axhline(y=self.lim[0], c = 'gray', label = 'Threshold')
+        plt.axhline(y=self.lim[1], c = 'gray')
+        for k,v in ev_dic.items():
+            plt.plot(k, v, marker='o', c = 'green')
+        plt.legend(loc='best')
+        if self.type_sens == True:
+            plt.title('Sensitivity-based detection')
+            plt.annotate(f'Sensitiviry={self.sens}', xy=(150,50))
+        else:
+            plt.title('IQR statistics-based detection of outliers')
+            plt.annotate(f'Sigma={round(self.pr[1], 2)}', xy=(150,50))
+        if cp_lines == True:
+            for c in self.cp:
+                plt.axvline(x=c, ymin=0, ymax=1, c = 'gray', ls = '--')
     
     def metricas(self, reference):
         """Under construction"""
@@ -307,13 +304,18 @@ def main():
     ## ------ Simulação da detecção de eventos em série real ----
     print ('\n ------- SIMULAÇÃO DETECTOR - DADOS REAIS ------- ')
     #Carrega série a partir de arquivo já com eventos
-    gecco = 'gecco.csv'
+    gecco = 'https://raw.githubusercontent.com/janiosl/python.ds/refs/heads/master/py_poo/pr_work/gecco.csv'
+    #gecco = 'gecco.csv'    
     df = pd.read_csv(gecco)
     ph = GeraTS(df.ph)
     
     #Detecção de eventos na série real
     ev_ph = Evento(ph)
     ev_ph.detector()
+    
+    print(ev_ph)
+    
+    print(f'Real events: {sum(df.event==1)}')
     
     print (' ------- FIM SIMULAÇÃO ------- \n')
 
