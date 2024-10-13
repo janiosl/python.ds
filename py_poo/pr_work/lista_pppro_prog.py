@@ -570,6 +570,7 @@ opera(('MULT', 2, 3))
 opera(('DIV', 2, 3))
 opera(('SUB', 2, 3))
 
+
 #Funções da aula 03 - Slide 26 a 27
 #====================================================
 #Questão 1
@@ -636,6 +637,80 @@ b = ('a','b','c')
 intercala_ls(a,b)
 intercala_ls([1,3,5], [2,4,6])
 
+
+#Funções da aula 03 - Slide 58 a 60
+#====================================================
+#Questão 1
+def inverte_frase(frase):
+    nf = frase.split()
+    nf.reverse()
+    nf = ' '.join(p for p in nf)
+    return nf
+
+
+#Aplicação
+f = 'eu gosto de chocolate'
+inverte_frase(f)
+
+#Questão 2
+def ordena_frase(frase):
+    nf = frase.split()
+    nf.sort()
+    nf = ' '.join(p for p in nf)
+    return nf
+
+
+#Aplicação
+f = 'eu gosto de chocolate'
+ordena_frase(f)
+
+f = 'eu gosto de doce'
+ordena_frase(f)
+
+#Questão 3
+def frase_i(frase):
+    nf = frase
+    for v in 'aeou':
+        nf = nf.replace(v, 'i')
+    return nf
+
+    
+#Aplicação
+f = 'Leveu meu cachorro para passear'
+frase_i(f)
+
+#Questão 4
+def palavra_frase(frase, palavra, pos):
+    frase = frase.split()
+    if palavra in frase:
+        pos = frase.index(palavra)
+        frase[pos] = palavra.upper()
+    else:
+        frase.insert(pos, palavra)
+    
+    frase = ' '.join(p for p in frase)
+    return frase
+
+
+#Aplicação
+f = 'Meu nome é ana'
+p = 'ana'
+palavra_frase(f, p, 0)
+
+p = 'primeiro'
+palavra_frase(f, p, 1)
+
+#Questão 5
+def faltas(jogos):
+    f = []
+    for jogo in jogos:
+        f.append(sum(jogo[2]))
+    return sum(f)
+
+
+#Aplicação
+js = [['Brasil','Itália', [10,9]],['Brasil','Espanha', [5,7]]]
+faltas(js)
 
 #Funções da aula 04 - Slides 24 a 25
 #====================================================
