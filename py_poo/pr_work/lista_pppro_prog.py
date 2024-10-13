@@ -24,7 +24,6 @@ print(area_ret(15,2))
 print(area_ret(500,700))
 print(area_ret(5,0))
 
-
 #Questão 2 - Coroa
 def potencia(x,y=2):
     """
@@ -55,7 +54,6 @@ def coroa(r1,r2):
 print(coroa(2,1))
 print(coroa(15,5))
 print(coroa(100,0))
-
 
 #Questão 3 - Resultado e resto da divisão de inteiros
 def div_rest(int1, int2):
@@ -98,7 +96,6 @@ gorjeta(1000)
 gorjeta(175)
 gorjeta(225.70)
 
-
 #Questão 6 - Média de dois números
 def media(x,y):
     """
@@ -114,7 +111,6 @@ media(5,5)
 media(3,4)
 media(3.0, 4.0)
 
-
 #Questão 7 - Média ponderada de dois números
 def media_pond(x, px, y, py):
     """
@@ -127,7 +123,6 @@ def media_pond(x, px, y, py):
 #Aplicação
 media_pond(10, 1, 9, 2)
 media_pond(9, 1, 10, 2)
-
 
 #Questão 8 - Distância barco na correnteza
 
@@ -172,7 +167,6 @@ def gorjeta_div(conta, pessoas):
 gorjeta_div(100, 2)
 gorjeta_div(520, 3)
 
-
 #Questão 13 - Área do cubo com aresta c
 def area_cubo(c):
     """
@@ -199,7 +193,6 @@ media_quatro(4,4,2,4)
 media_quatro(2,4,2,4)
 media_quatro(2,2,2,2)
 
-
 #Questão 1b - Maior números de bombons e troco
 #SOLUÇÃO 1 - Criar uma função do zero
 def bombons(dinheiro, preco):
@@ -211,7 +204,6 @@ def bombons(dinheiro, preco):
 bombons(7, 0.75)
 bombons(25, 2)
 
-
 #SOLUÇÃO 2 - Criar uma função copiando a anterior que realiza o mesmo calculo
 fun_bb = div_rest
 #Resposta com Solução 2
@@ -221,7 +213,6 @@ fun_bb(25, 2)
 #Resposta com Solução 3
 div_rest(7, 0.75)
 div_rest(25, 2)
-
 
 #Questão 2a - Calcular hipotenusa dados os catetos
 def hipotenusa(c1, c2):
@@ -234,7 +225,6 @@ hipotenusa(4,3)
 hipotenusa(6,8)
 hipotenusa(9,12)
 
-
 #Questão 2b - Distância no plano carteseano
 def distancia_plano(xa, ya, xb, yb):
     from math import pow, sqrt
@@ -246,17 +236,14 @@ distancia_plano(3,5,6,1)
 distancia_plano(-3,2, 3,-2)
 distancia_plano(-2,13,6,7)
 
-
 #Questão 2c - Perímetro de triângulo reto dados os catetos
 def perimetro_tri(c1, c2):
     return c1 + c2 + hipotenusa(c1, c2)
-
 
 #Aplicação
 perimetro_tri(4,3)
 perimetro_tri(6,8)
 perimetro_tri(9,12)
-
 
 #Questão 3 - Comprimento do círculo
 def comprimento_circ(r):
@@ -279,7 +266,6 @@ voltas(4,50)
 voltas(4,60)
 voltas(15,300)
 
-
 #Funções da aula 02 - Slides 17 a 19
 #====================================================
 #Questão 1
@@ -294,7 +280,6 @@ absoluto(5)
 absoluto(-3)
 absoluto(0)
 absoluto(3)
-
 
 #Questão 2
 def raizes_sg(a,b,c):
@@ -330,7 +315,6 @@ raizes_sg(0,2,3)
 raizes_sg(1,2,3)
 raizes_sg(10,13,2)
 raizes_sg(1,3,2)
-
 
 #Questão 3
 def rep_palavra(p):
@@ -390,7 +374,6 @@ def analise_nome(nome):
 analise_nome('Janio de Souza Lima')
 analise_nome('Cecilia')
 
-
 #Questão 2
 def inverte(p):
     return p[::-1]
@@ -401,7 +384,6 @@ inverte('casa')
 inverte('caneca')
 inverte('tv')
 
-
 #Questão 3
 def letras_impares(palavra):
     return palavra[::2]
@@ -411,7 +393,6 @@ def letras_impares(palavra):
 letras_impares('Jano')
 letras_impares('sapato')
 letras_impares('Python')
-
 
 #Questão 4
 def concatena_si(a,b):
@@ -425,7 +406,6 @@ concatena_si(a,b)
 concatena_si('Ada', 'Atena')
 concatena_si('Oca', 'Madeira')
 
-
 #Questão 5
 def multi_final(s):
     return s[-2:] * 3
@@ -435,12 +415,12 @@ def multi_final(s):
 multi_final('vaca')
 multi_final('abcd')
 
-
 #Questão 6
 def concatena_ord(a, b):
     c = [a,b]
     c.sort()
     return c[0]+' '+c[1]
+
 
 def concatena_ord2(a, b):
     if a[0] < b[0]:
@@ -448,6 +428,7 @@ def concatena_ord2(a, b):
     else:
         return b + ' ' + a
     
+
 #Aplicação
 a = 'Janio'
 b = 'Cecilia'
@@ -459,6 +440,7 @@ concatena_ord2(a,b)
 concatena_ord2('xbcd', 'efghi')
 concatena_ord2('Zebra', 'Teste')
 
+
 ## Parte 02 ----------------
 #Questão 1
 def concatena_abba(a,b):
@@ -469,7 +451,6 @@ def concatena_abba(a,b):
 concatena_abba('a', 'b')
 concatena_abba('ca','sa')
 concatena_abba('fa', 'to')
-
 
 #Questão 2
 def sorte(nome, idade):
@@ -486,7 +467,6 @@ def sorte(nome, idade):
 #Aplicação
 sorte('Janio', 43)
 sorte('Igor', 40)
-
 
 #Questão 3
 def concatena_fatias(a,b):
@@ -511,9 +491,150 @@ a = 'O rato roeu a roupa do rei de Roma'
 b = 'O doce perguntou para o doce qual o doce mais doce'
 concatena_fatias(a, b)
 
+#Questão 4
+def muda_palavra(s,x,i):
+    if i < 0 or i > len(s):
+        return 'Posição inválida'
+    ns = s.replace(s[i], x)
+    return ns
 
-#Funções da aula 03
+
+#Aplicação
+muda_palavra('Janeo', 'i', 3)
+s = 'Vaxco'
+i = s.index('x')
+muda_palavra(s, 's', i)
+
+#Questão 5
+def meio(s):
+    m = int(len(s)/2)
+    ns = s[:m] + s + s[m:]
+    return ns
+
+
+#Aplicação
+meio('teste')
+meio('abcd')
+meio('abcde')
+
+#Questão 6
+def hashtag(s):
+    m = int(len(s)/2)
+    ns = '#'+s[:m] + '#' + s[m:] + '#'
+    return ns
+
+#Aplicação
+hashtag('Vasco')
+hashtag('abcd')
+hashtag('abcde')
+
+
+#Funções da aula 03 - Slide 14
 #====================================================
+#Questão 1
+def intercala(tp1, tp2):
+    ls = []
+    for i in range(len(tp1)):
+        ls.append(tp1[i])
+        ls.append(tp2[i])
+        
+    tp3 = tuple(ls)
+    return tp3
+
+
+#Aplicação
+a = (1,2,3)
+b = ('a','b','c')
+intercala(a,b)
+
+#Questão 2
+def opera(tp):
+    if tp[0] == 'SOMA':
+        res = tp[1]+tp[2]
+    elif tp[0] == 'MULT':
+        res = tp[1]*tp[2]
+    elif tp[0] == 'DIV':
+        res = tp[1]/tp[2]
+    elif tp[0] == 'SUB':
+        res = tp[1]-tp[2]
+    else:
+        return None
+    return res
+
+
+#Aplicação
+op = ('SOMA', 2, 3)
+opera(op)
+opera(('TESTE', 2, 3))
+opera(('MULT', 2, 3))
+opera(('DIV', 2, 3))
+opera(('SUB', 2, 3))
+
+#Funções da aula 03 - Slide 26 a 27
+#====================================================
+#Questão 1
+def conta_palavras(frase):
+    l = frase.split()
+    return len(l)
+
+
+#Aplicação
+s = 'O rato roeu a roupa do rei de Roma'
+conta_palavras(s)
+s = ' O rato roeu a roupa do rei de Roma'
+conta_palavras(s)
+conta_palavras('Programação em Python')
+
+#Questão 2
+def muda_frase(frase, palavra, p1, p2):
+    pass
+    
+    
+#Aplicação
+
+#Questão 3
+def sub_branco(frase):
+    ls = frase.split()
+    texto = '#'.join([p for p in ls])
+    return texto
+
+
+#Aplicação
+s = ' O rato roeu a roupa do rei de Roma'
+sub_branco(s)
+
+#Questão 4
+def frase_fatia(s, c):
+    idx = s.index(c)
+    return s[idx:]
+
+
+#Aplicação
+frase_fatia('Janio','i')
+frase_fatia('Quem mexeu no meu queijo', 'n')
+
+#Questão 5
+def elementos(tp):
+    pass
+
+
+#Aplicação
+
+#Questão 6
+def intercala_ls(ls1, ls2):
+    ls3 = []
+    for i in range(len(ls1)):
+        ls3.append(ls1[i])
+        ls3.append(ls2[i])
+        
+    return ls3
+
+
+#Aplicação
+a = (1,2,3)
+b = ('a','b','c')
+intercala_ls(a,b)
+intercala_ls([1,3,5], [2,4,6])
 
 
 #Funções da aula 04 - Slides 24 a 25
@@ -533,7 +654,6 @@ prime_div(8)
 prime_div(9)
 prime_div(7)
 
-
 #Questão 2
 def soma_n_imp(n):
     soma = 0
@@ -547,7 +667,6 @@ def soma_n_imp(n):
 soma_n_imp(7)
 soma_n_imp(3)
 soma_n_imp(13)
-
 
 #Questão 3
 def fatorial(num):
@@ -568,7 +687,6 @@ def soma_fatorial():
 #Aplicação
 soma_fatorial()
 
-
 #Questão 4
 #Questão 5
 
@@ -587,7 +705,6 @@ cont_div(7)
 cont_div(8)
 cont_div(5)
 cont_div(1)
-
 
 #Questão 7
 def cont_letra(frase, letra):
