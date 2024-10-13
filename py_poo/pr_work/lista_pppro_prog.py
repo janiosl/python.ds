@@ -1027,6 +1027,62 @@ traducao_rnaM(mol)
 mol = 'UAUCUUCAA'
 traducao_rnaM(mol)
 
+#Funções da aula 06 - Slides 28 a 31
+#====================================================
+#Feito em sala de aula
+
+#Questão 2
+def lanca():
+    lancamentos = []
+    while True:
+        face = int(input('Lançe o dados (99 acaba o jogo): '))
+        if face == 99:
+            print('Fim de jogo')
+            break
+        elif face < 1 or face > 6:
+            print(f'Erro: Dado não tem face {face}')
+        else:
+            lancamentos.append(face)
+    return lancamentos
+        
+
+def jogo_dados(r=[],online=True):
+    if online:
+        r = lanca()
+    
+    rep = 0
+    seq = []
+    for j in range(0, len(r)-1):
+        #print(r[j], r[j+1])
+        if r[j] == r[j+1]:
+            #print(f'Repetição: {r[j]}')
+            if r[j] not in seq:
+                #print('Inédito')
+                seq.append(r[j])
+                rep += 1
+            #else:
+                #print('Já estava na repetição')
+        else:
+            seq = []
+    
+            
+    return r, rep
+
+
+#Aplicação
+#Opções diferentes de resultado
+r = [2, 2, 5, 3, 1, 6, 6]
+r = [2, 2, 5, 3, 1, 6, 6,6]
+r = [2, 2, 5, 3, 1, 6, 6,6,1,1]
+r = [2, 2, 5, 3, 1, 6, 6,6,1,1,2,2,2]
+jogo_dados(r, online=False)
+
+#Digitar resultado diretamente na função
+jogo_dados([4,5,4,2,1,4,4,1,1,3,5,1,2,3,1], online=False)
+
+#Jogando online
+jogo_dados()
+
 
 #Funções da aula 08 - Parte b
 #====================================================
