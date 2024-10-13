@@ -1026,3 +1026,188 @@ traducao_rnaM(mol)
 
 mol = 'UAUCUUCAA'
 traducao_rnaM(mol)
+
+
+#Funções da aula 08 - Parte b
+#====================================================
+#Questão 1
+class Fracao:
+    def __init__(self, numerador=None, denominador=None):        
+        self.numerador = numerador
+        self.denominador = denominador
+        
+    def __repr__(self):
+        return f'{self.numerador} / {self.denominador}'
+    
+    def set_numerador(self, n):
+        self.numerador = n
+        
+    def get_numerador(self):
+        return self.numerador
+    
+    def set_denominador(self, d):
+        if d == 0:
+            return 'Denominador inválido'
+        self.denominador = d
+        
+    def get_denominador(self):
+        return self.denominador
+    
+    def euclides_mdc(self, dividendo, divisor):
+        while divisor != 0:
+            temp = divisor
+            divisor = dividendo % divisor
+            dividendo = temp
+        return dividendo
+        
+    
+#Aplicação
+fr = Fracao(2,3)
+print(fr)
+fr = Fracao()
+print(fr)
+
+fr.set_numerador(2)
+fr.set_denominador(0)
+fr.set_denominador(4)
+print(fr)
+
+fr.get_numerador()
+fr.get_denominador()
+
+fr.euclides_mdc(8,2)
+fr.euclides_mdc(2,3)
+
+#Questão 2
+class Funcionario:
+    def __init__(self, nome, salario, n_dep):
+        self.nome = nome
+        self.salario = salario
+        self.n_dep = n_dep
+    
+    def get_nome(self):
+        return self.nome
+    
+    def exibeDados(self):
+        print(f'Nome: {self.nome} \n  Salário: {self.salario} \n  Dependentes: {self.n_dep}')
+    
+
+func = Funcionario('Janio', 35000, 2)
+func.exibeDados()
+
+class Assistente(Funcionario):
+    def __init__(self, nome, salario, n_dep, matricula=None):
+        Funcionario.__init__(self, nome, salario, n_dep)
+        self.matricula = matricula
+        
+    def set_matricula(self, matricula):
+        self.matricula = matricula
+        
+    def get_matricula(self):
+        return self.matricula
+        
+    def exibeDados(self):
+        Funcionario.exibeDados(self)
+        print(f'  Matricula: {self.matricula}')
+
+
+ass = Assistente('Janio', 35000, 2)
+ass.set_matricula(1234)
+ass.exibeDados()
+ass.get_matricula()
+
+class Tecnico(Assistente):
+    def __init__(self, nome, salario, n_dep, matricula=None, bonus=None):
+        Assistente.__init__(self, nome, salario, n_dep, matricula=None)
+        self.bonus = bonus
+    
+    def set_bonus(self, bonus):
+        self.bonus= bonus
+        
+    def get_bonus(self):
+        return self.bonus
+    
+    def exibeDados(self):
+        Assistente.exibeDados(self)
+        print(f'  Bônus: {self.bonus}')
+        
+
+tec = Tecnico('José', 15000, 4)
+tec.set_matricula(4321)
+tec.exibeDados()
+
+tec.set_bonus(3000)
+tec.exibeDados()
+
+print(tec.get_nome(), tec.get_matricula())
+
+
+class Administrativo(Assistente):
+    def __init__(self, nome, salario, n_dep, matricula=None, turno='Dia', adicional=None):
+        Assistente.__init__(self, nome, salario, n_dep, matricula=None)
+        self.turno = turno
+        self.adicional = None
+    
+    def set_turno(self, turno):
+        self.turno = turno
+        if turno == 'Noite':
+            self.set_adicional(self.salario*0.3)
+    
+    def get_turno(self):
+        return self.turno
+    
+    def set_adicional(self, adicional):
+        self.adicional = adicional
+        
+    def get_adicional(self):
+        return self.adicional
+    
+    def exibeDados(self):
+        Assistente.exibeDados(self)
+        print(f'  Turno: {self.turno}\n  Adicional: {self.adicional}')
+
+
+adm = Administrativo('Maria', 19000, 1)
+adm.set_matricula(9988)
+adm.exibeDados()
+
+adm.set_turno('Noite')
+adm.exibeDados()
+
+print(adm.get_nome(), adm.get_matricula())
+
+#Questão 3
+class Animal:
+    def __init__(self, nome, raca):
+        self.nome = nome
+        self.raca = raca
+    
+    def caminha(self):
+        print('Caminhando...')
+    
+    def __repr__(self):
+        return f'Nome: {self.nome}, Raça: {self.raca}'
+        
+a = Animal('Rabito', 'indefinida')
+a.caminha()
+
+class Cachorro(Animal):
+    def late(self):
+        print('Au au!')
+
+c = Cachorro('Anubis', 'Pinscher')
+c.late()
+print(c)
+
+class Gato(Animal):
+    def mia(self):
+        print('Miaaauuuu.....')
+        
+g = Gato('Jerry', 'Angorá')
+print(g)
+g.mia()
+
+
+c.caminha()
+g.caminha()
+
