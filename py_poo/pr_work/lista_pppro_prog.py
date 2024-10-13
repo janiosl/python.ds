@@ -854,3 +854,27 @@ cont_letra('casa', 'a')
 cont_letra('janio', 'o')
 cont_letra('a casa de janio', 'a')
 cont_letra('a casa de janio', 'j')
+
+
+#Funções da aula 05 - Slides 19 e 20
+#====================================================
+#Questão 1
+def ordena_sel(lista):
+    for i in range(len(lista)):
+        pointer = i
+        for j in range(i + 1, len(lista)):
+            if lista[j] < lista[pointer]:
+                pointer = j
+        lista[i], lista[pointer] = lista[pointer], lista[i]
+    return lista
+
+
+#Aplicação
+l = [2,1,5,7,6,3]
+ordena_sel(l)
+
+#Questão 2
+def ordena_bolha(lista):
+    pass
+
+#Aplicação
