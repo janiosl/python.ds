@@ -712,6 +712,65 @@ def faltas(jogos):
 js = [['Brasil','Itália', [10,9]],['Brasil','Espanha', [5,7]]]
 faltas(js)
 
+#Questão 6
+def insere_ordem(lista, n):
+    lista.append(n)
+    lista.sort()
+    return lista
+    
+
+l = [1,3,4,5,6]
+l = insere_ordem(l, 2)
+l
+
+l = insere_ordem(l, 9)
+l = insere_ordem(l, 7)
+l
+
+
+#Questão 7
+def sel_maior(lista, n):
+    nl = []
+    for item in lista:
+        if item > n:
+            nl.append(item)
+    return nl
+
+l.reverse()
+sel_maior(l, 4)
+
+#Questão 8
+def maior(lista):
+    m = 0
+    for n in lista:
+        if n > m:
+            m = n
+    return m
+
+
+#Aplicação
+l = [1,2,3,4]
+maior(l)
+
+l = [4,9,7,2,8]
+maior(l)
+
+#Questão 9
+def boletim(notas):
+    media = sum(notas)/len(notas)
+    acima = sel_maior(notas, media)
+    return media, acima
+
+
+#Aplicação
+n = [10,7,5,9,5,9,6,10]
+boletim(n)
+
+n = [10,8,7,5]
+boletim(n)
+
+
+
 #Funções da aula 04 - Slides 24 a 25
 #====================================================
 #Questão 1
