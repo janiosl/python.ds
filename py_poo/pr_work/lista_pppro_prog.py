@@ -875,6 +875,154 @@ ordena_sel(l)
 
 #Questão 2
 def ordena_bolha(lista):
-    pass
+    #or_ls = lista
+    pointer = 0
+    end = len(lista)-1
+    
+    while end > 0:
+        print('--- Início da Rodada ---')
+        while pointer < end:
+            print(lista[pointer], lista[pointer+1], end=' ')
+            if lista[pointer] < lista[pointer+1]:
+                men = pointer
+                print(f'Min: {lista[men]}')
+            else:
+                men = pointer+1
+                print(f'Min: {lista[men]}')
+                lista[pointer], lista[pointer+1] = lista[pointer+1], lista[pointer]            
+            print(f'pointer: {pointer}')            
+            pointer += 1
+        print('--- Fim da Rodada ---')
+        pointer = 0
+        end -= 1
+    
 
 #Aplicação
+l = [5,3,2,4,7,1,0,6]
+ordena_bolha(l)
+
+l = [3,7,8,4,8,9,5,9,10]
+ordena_bolha(l)
+
+l = [2,1,5,7,6,3]
+ordena_bolha(l)
+
+
+#Funções da aula 05 - Slides 35 a 40
+#====================================================
+#Parte 01
+#Questão 1
+def tp_to_dic(tp1,tp2):
+    dic = dict(zip(tp1,tp2))
+    return dic
+
+
+#Aplicação
+nomes = ['Janio', 'Cecilia', 'Tatiane']
+genero = ['M', 'F', 'F']
+
+cadastro = tp_to_dic(nomes, genero)
+print(cadastro)
+
+carros = ['Compass', 'T-Cross', 'Tiggo 8']
+marca = ['Jeep', 'Volkwagen', 'Cherry']
+
+frota = tp_to_dic(marca, carros)
+print(frota)
+
+#Questão 2
+def dic_to_tp(dic):
+    tp1 = list(dic.keys())
+    tp1.sort()
+    tp2 = list(dic.values())
+    tp2.sort()
+    return tuple(tp1), tuple(tp2)
+    
+
+#Aplicação
+dic_to_tp(cadastro)
+t1, t2 = dic_to_tp(frota)
+
+d = {'João': 32, 'Cristina': 18}
+dic_to_tp(d)
+
+
+#Parte 02
+#Questão 1
+def sem_duplicados(lista):
+    sem_dupl = []
+    for item in lista:
+        if not item in sem_dupl:
+            sem_dupl.append(item)
+    return sem_dupl
+
+
+def sem_duplicados2(lista):
+    l = set(lista)
+    l = list(l)
+    return l
+
+
+#Aplicação
+l = [1,2,3,2,5,5,8,10]
+sem_duplicados(l)
+
+sem_duplicados2(l)
+
+#Questão 2
+def romanos(n):
+    UNIDADES = {0: '', 1: 'I', 2: 'II', 3: 'III', 4: 'IV',
+                5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX'}
+    
+    DEZENAS = {0: '', 1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL',
+                5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC'}
+    
+    CENTENAS = {0: '', 1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD',
+                5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM'}
+    
+    c = n//100
+    d = (n-c*100)//10
+    u = (n-(c*100+d*10))
+    
+    r = CENTENAS[c]+DEZENAS[d]+UNIDADES[u]
+        
+    return r
+
+
+#Aplicação
+romanos(995)
+romanos(81)
+
+#Questão 3
+def conta_palavras(frase):
+    p = frase.split()
+    chaves = sem_duplicados(p)
+    freq_pal = {palavra: p.count(palavra) for palavra in chaves}
+    
+    return freq_pal
+
+#Aplicação
+f = 'dinheiro é dinheiro e vice versa'
+conta_palavras(f)
+
+f = 'malandro é malandro e mané é mané'
+conta_palavras(f)
+
+#Questão 4
+def traducao_rnaM(molecula):
+    tabela = {'UUU': 'Phe', 'CUU': 'Leu', 'UUA': 'Leu', 'AAG': 'Lisina',
+              'UCU': 'Ser', 'UAU': 'Tyr', 'CAA': 'Gln'}
+    cadeia = []
+    for k in range(0,7,3):
+        cadeia.append(tabela[molecula[k:k+3]])
+    
+    cadeia = '-'.join(cadeia)    
+    return cadeia
+
+
+#Aplicação
+mol = 'UUUUUAUCU'
+traducao_rnaM(mol)
+
+mol = 'UAUCUUCAA'
+traducao_rnaM(mol)
