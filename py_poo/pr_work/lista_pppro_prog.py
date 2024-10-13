@@ -1092,9 +1092,6 @@ class Funcionario:
         print(f'Nome: {self.nome} \n  Salário: {self.salario} \n  Dependentes: {self.n_dep}')
     
 
-func = Funcionario('Janio', 35000, 2)
-func.exibeDados()
-
 class Assistente(Funcionario):
     def __init__(self, nome, salario, n_dep, matricula=None):
         Funcionario.__init__(self, nome, salario, n_dep)
@@ -1111,11 +1108,6 @@ class Assistente(Funcionario):
         print(f'  Matricula: {self.matricula}')
 
 
-ass = Assistente('Janio', 35000, 2)
-ass.set_matricula(1234)
-ass.exibeDados()
-ass.get_matricula()
-
 class Tecnico(Assistente):
     def __init__(self, nome, salario, n_dep, matricula=None, bonus=None):
         Assistente.__init__(self, nome, salario, n_dep, matricula=None)
@@ -1130,16 +1122,6 @@ class Tecnico(Assistente):
     def exibeDados(self):
         Assistente.exibeDados(self)
         print(f'  Bônus: {self.bonus}')
-        
-
-tec = Tecnico('José', 15000, 4)
-tec.set_matricula(4321)
-tec.exibeDados()
-
-tec.set_bonus(3000)
-tec.exibeDados()
-
-print(tec.get_nome(), tec.get_matricula())
 
 
 class Administrativo(Assistente):
@@ -1166,14 +1148,28 @@ class Administrativo(Assistente):
         Assistente.exibeDados(self)
         print(f'  Turno: {self.turno}\n  Adicional: {self.adicional}')
 
+        
+#Aplicação
+func = Funcionario('Janio', 35000, 2)
+func.exibeDados()
+
+ass = Assistente('Janio', 35000, 2)
+ass.set_matricula(1234)
+ass.exibeDados()
+ass.get_matricula()
+
+tec = Tecnico('José', 15000, 4)
+tec.set_matricula(4321)
+tec.exibeDados()
+tec.set_bonus(3000)
+tec.exibeDados()
+print(tec.get_nome(), tec.get_matricula())
 
 adm = Administrativo('Maria', 19000, 1)
 adm.set_matricula(9988)
 adm.exibeDados()
-
 adm.set_turno('Noite')
 adm.exibeDados()
-
 print(adm.get_nome(), adm.get_matricula())
 
 #Questão 3
@@ -1183,31 +1179,33 @@ class Animal:
         self.raca = raca
     
     def caminha(self):
-        print('Caminhando...')
+        print(f'{self.nome} está caminhando...')
     
     def __repr__(self):
         return f'Nome: {self.nome}, Raça: {self.raca}'
-        
-a = Animal('Rabito', 'indefinida')
-a.caminha()
+
 
 class Cachorro(Animal):
     def late(self):
-        print('Au au!')
+        print('Au au!')        
 
-c = Cachorro('Anubis', 'Pinscher')
-c.late()
-print(c)
 
 class Gato(Animal):
     def mia(self):
         print('Miaaauuuu.....')
         
+
+#Aplicação        
+a = Animal('Rabito', 'indefinida')
+a.caminha()
+
+c = Cachorro('Anubis', 'Pinscher')
+c.late()
+print(c)
+
 g = Gato('Jerry', 'Angorá')
 print(g)
 g.mia()
 
-
 c.caminha()
 g.caminha()
-
