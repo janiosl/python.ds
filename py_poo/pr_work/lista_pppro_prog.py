@@ -300,16 +300,16 @@ absoluto(3)
 def raizes_sg(a,b,c):
     raizes = []
     #Equaçao do segundo grau: ax**2 + bx + c'
-    if(a==0):
+    if a == 0:
         print('Coeficiente a=0. Não há raízes')
         q = 0
     else:
         d = b*b - (4*a*c)
         
-        if d<0:
+        if d < 0:
             print('Delta menor que 0. Raízes imaginárias')
             q = 0
-        elif d==0:
+        elif d == 0:
             raiz = -b / (2*a)
             print('Delta=0 , raiz = ',raiz)
             raizes.append(raiz)
