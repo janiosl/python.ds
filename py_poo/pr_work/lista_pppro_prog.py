@@ -379,6 +379,7 @@ meia(43, estudante=True)
 
 #Funções da aula 02 - Slides 40 a 43
 #====================================================
+## Parte 01 ----------------
 #Questão 1
 def analise_nome(nome):
     print(f'{nome} tem {len(nome)} letras e começa com {nome[0]}')
@@ -399,6 +400,117 @@ def inverte(p):
 inverte('casa')
 inverte('caneca')
 inverte('tv')
+
+
+#Questão 3
+def letras_impares(palavra):
+    return palavra[::2]
+
+
+#Aplicação
+letras_impares('Jano')
+letras_impares('sapato')
+letras_impares('Python')
+
+
+#Questão 4
+def concatena_si(a,b):
+    return a[1:] + b[1:]
+
+
+#Aplicação
+a = 'Jano'
+b = 'Minerva'
+concatena_si(a,b)
+concatena_si('Ada', 'Atena')
+concatena_si('Oca', 'Madeira')
+
+
+#Questão 5
+def multi_final(s):
+    return s[-2:] * 3
+
+
+#Aplicação
+multi_final('vaca')
+multi_final('abcd')
+
+
+#Questão 6
+def concatena_ord(a, b):
+    c = [a,b]
+    c.sort()
+    return c[0]+' '+c[1]
+
+def concatena_ord2(a, b):
+    if a[0] < b[0]:
+        return a + ' ' + b
+    else:
+        return b + ' ' + a
+    
+#Aplicação
+a = 'Janio'
+b = 'Cecilia'
+concatena_ord(a,b)
+concatena_ord('xbcd', 'efghi')
+
+
+concatena_ord2(a,b)
+concatena_ord2('xbcd', 'efghi')
+concatena_ord2('Zebra', 'Teste')
+
+## Parte 02 ----------------
+#Questão 1
+def concatena_abba(a,b):
+    return a+b+b+a
+
+
+#Aplicação
+concatena_abba('a', 'b')
+concatena_abba('ca','sa')
+concatena_abba('fa', 'to')
+
+
+#Questão 2
+def sorte(nome, idade):
+    x = 0
+    x = idade * 4
+    x += 8
+    x *= 60
+    x /= 240
+    x += 22
+    x  -= idade
+    return f'Parabéns {nome}, seu número da sorte é {x}'
+
+
+#Aplicação
+sorte('Janio', 43)
+sorte('Igor', 40)
+
+
+#Questão 3
+def concatena_fatias(a,b):
+    if len(a) < 15:
+        return 'Inválido: Número de letras de a < 15'
+    elif len(b) < 15:
+        return 'Inválido: Número de letras de b < 15'
+
+    return a[:5]+b[-10:]
+        
+
+#Aplicação
+a = ''
+b = 'O rato roeu a roupa do rei de Roma'
+concatena_fatias(a, b)
+
+a = 'O rato roeu a roupa do rei de Roma'
+b = 'O rato roeu'
+concatena_fatias(a, b)
+
+a = 'O rato roeu a roupa do rei de Roma'
+b = 'O doce perguntou para o doce qual o doce mais doce'
+concatena_fatias(a, b)
+
 
 #Funções da aula 03
 #====================================================
