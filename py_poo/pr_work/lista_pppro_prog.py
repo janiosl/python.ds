@@ -5,8 +5,6 @@ Lista de exercícios da disciplina
 Aluno: Janio de Souza Lima
 """
 
-#Definição de funções
-
 #Funções da aula 01 - Slides 21 a 23
 #====================================================
 #Questão 1 - Área do retângulo
@@ -1027,6 +1025,7 @@ traducao_rnaM(mol)
 mol = 'UAUCUUCAA'
 traducao_rnaM(mol)
 
+
 #Funções da aula 06 - Slides 28 a 31
 #====================================================
 #Feito em sala de aula
@@ -1083,6 +1082,83 @@ jogo_dados([4,5,4,2,1,4,4,1,1,3,5,1,2,3,1], online=False)
 #Jogando online
 jogo_dados()
 
+#Questão 3
+def area_trapezio(a,b,c):
+    #Bases (B,b) = a, b; Altura (c) = c
+    print('Área do trapézio')
+    print(f'B={a}, b={b}, h={c}')
+    
+    return ((a+b)*c)/2
+
+
+def mult_abc(a,b,c):
+    print('Multiplicação a.a, b.b, c.c')
+    args = [a,b,c]
+    res = []
+    for arg in args:
+        res.append(arg*arg)
+        
+    return args, res
+    
+
+def media_abc(a,b,c):
+    print('Média de a,b,c')
+    args = [a,b,c]
+    res = sum(args)/len(args)
+    
+    return args, res
+    
+
+def soma_interv_abc(a,b,c):
+    print('Soma intervalo de a até b, com variação de c')
+    seq = list(range(a,b+1,c))
+    
+    return seq, sum(seq)
+
+
+#Aplicação
+def main():
+    global res
+    global abc
+    
+    while True:
+        abc = []
+        for i in range(3):
+            abc.append(int(input(f'Digite o {i+1}º número: ')))
+        
+        res = 0
+        op = int(input('Digite a operação desejada: '))
+    
+        if op == 1:
+            res = area_trapezio(abc[0], abc[1], abc[2])
+        elif op == 2:
+            res = mult_abc(abc[0], abc[1], abc[2])
+        elif op == 3:
+            res = media_abc(abc[0], abc[1], abc[2])
+        elif op == 4:
+            res = soma_interv_abc(abc[0], abc[1], abc[2])
+        elif op == 99:
+            print('Programa finalizado...')
+            break
+        else:
+            print('Operação inválida')
+            
+        print(f'Resultado: {res}')
+    
+    return res
+
+
+if __name__ == "__main__":
+    main()
+
+
+#Funções da aula 07
+#====================================================
+#Exercícios estão na aula 08
+
+#Funções da aula 08a
+#====================================================
+#Feito em sala de aula
 
 #Funções da aula 08 - Parte b
 #====================================================
