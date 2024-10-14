@@ -873,26 +873,16 @@ ordena_sel(l)
 
 #Questão 2
 def ordena_bolha(lista):
-    #or_ls = lista
     pointer = 0
-    end = len(lista)-1
-    
+    end = len(lista)-1    
     while end > 0:
-        print('--- Início da Rodada ---')
         while pointer < end:
-            print(lista[pointer], lista[pointer+1], end=' ')
-            if lista[pointer] < lista[pointer+1]:
-                men = pointer
-                print(f'Min: {lista[men]}')
-            else:
-                men = pointer+1
-                print(f'Min: {lista[men]}')
-                lista[pointer], lista[pointer+1] = lista[pointer+1], lista[pointer]            
-            print(f'pointer: {pointer}')            
+            if lista[pointer] > lista[pointer+1]:
+                lista[pointer], lista[pointer+1] = lista[pointer+1], lista[pointer]                                    
             pointer += 1
-        print('--- Fim da Rodada ---')
         pointer = 0
         end -= 1
+    return lista
     
 
 #Aplicação
