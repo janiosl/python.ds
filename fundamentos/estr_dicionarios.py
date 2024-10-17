@@ -16,8 +16,35 @@ telefones.values()
 
 telefones['Janio']
 telefones['João'] = 99880011
+telefones['Maria'] = 99112510
 
 print(telefones)
+
+
+nome = input('Digite o nome do contato: ')
+telefone = int(input('Digite o telefone do contato: '))
+telefones[nome] = telefone
+
+#Agenda internativa
+while True:
+    nome = input('Digite o nome do contato: ')
+    telefone = int(input('Digite o telefone do contato: '))
+    telefones[nome] = telefone
+    continuar = input('Deseja adicionar outro registro? [S/N]')
+    if continuar[0].upper() == 'N':
+        print('Programa Agenda Finalizado...')
+        break
+    
+
+continuar = 'sim'
+continuar
+continuar[0].upper()
+
+'Janio'.upper()
+'JANIO'.lower()
+
+print(telefones)
+telefones.items()
 
 for chave, valor in telefones.items():
     print('Chave:', chave, ', Valor:', valor)
@@ -36,6 +63,7 @@ print(telefones)
 #Verificar existência de chaves em um dicionário
 'João' in telefones
 'Janio' in telefones
+
 
 #Outra notação para criar dicionários
 senhas = dict(usr1='segredo', usr2='senhaDificil', usr3='@PyDS_is_the_best')
