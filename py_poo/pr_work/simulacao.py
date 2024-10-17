@@ -124,7 +124,7 @@ class Evento:
         
         return lim
     
-    def detector(self, type_sens = False, w_size=30, sensitivity=0.2, adaptive=False):
+    def detector(self, type_sens = False, w=30, sensitivity=0.2, adaptive=False):
         if type_sens == True:
             if sensitivity < 0 or sensitivity > 1:
                 return '*** Sensitivity invalid. It must be between 0 and 1 ***'
@@ -141,8 +141,8 @@ class Evento:
             mu_base = np.mean(serie)
             std_base = np.std(serie)
         else:
-            mu_base = np.mean(serie[:w_size])
-            std_base = np.std(serie[:w_size])
+            mu_base = np.mean(serie[:w])
+            std_base = np.std(serie[:w])
         
         pr = (mu_base, std_base)
         
@@ -150,7 +150,7 @@ class Evento:
         lim = self.lim_calc(pr=pr, sensitivity=sensitivity, type_sens = type_sens)
         
         #Step 3 - Slide througout the series
-        pointer = w_size + 1
+        pointer = w + 1
         batch = 0
         print(f'Current batch={batch}')
         print('Walking through the series...', end='')
@@ -164,7 +164,7 @@ class Evento:
                 ev.append(pointer)
             print('.', end='')
             pointer += 1
-            if pointer % w_size == 0:
+            if pointer % w == 0:
                 batch += 1
                 print(f'\n    Batch changed. Current batch={batch}')
                 if adaptive == True:
