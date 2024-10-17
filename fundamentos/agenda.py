@@ -46,6 +46,7 @@ def salvar(ag, saida='agenda.csv'):
         print('Nome,Telefone' , file=arquivo)
         for k,v in ag.items():
             print(k,v, sep=',', file=arquivo)
+        
         print(f'Agenda salva no arquivo: {saida}')
         print('-' * 60)
 
