@@ -3,7 +3,7 @@
 Python DS - Projeto de conclusão - Juntando as peças
 @author: janio
 """
-
+import pandas as pd
 #Funções auxiliares da agenda
 def cadastro(ag):
     """Função de cadastro de contatos"""
@@ -35,7 +35,7 @@ def consulta(ag):
     n = input('Digite o nome para consulta: ')
     print('-' * 60)
     if n in ag.keys():        
-        print(f'Resultado da consulta:\nNome: {n} - Telefone: {ag[n]}')
+        print(f'Resultado da consulta:\nNome: {n} - Telefone: {ag[n]}')    
     else:
         print('Contato não cadastrado')
     print('-' * 60)
@@ -50,6 +50,18 @@ def salvar(ag, saida='agenda.csv'):
         print(f'Agenda salva no arquivo: {saida}')
         print('-' * 60)
 
+
+def carregar(ag, arquivo):
+    """Carrega registros na agenda a partir de um arquivo csv"""
+    ag = pd.read_csv(arquivo)
+    ag = dict(zip(ag.Nome, ag.Telefone))
+    
+    print(f'Agenda carregada do arquivo: {arquivo}')
+    exibe(ag)
+    print('-' * 60)
+    
+    return ag
+
         
 #Programa principal
 def main():
@@ -61,7 +73,7 @@ def main():
     
     while True:
         print('Selecione uma função:\n1 - Cadastro\n2 - Exibir agenda')
-        print('3 - Consulta\n4 - Gravar em arquivo\n99 - SAIR')
+        print('3 - Consulta\n4 - Gravar em arquivo\n5 - Carregar\n99 - SAIR')
         op = int(input('Opção: '))
         
         if op == 1:
@@ -74,6 +86,13 @@ def main():
             saida = input('Nome do arquivo (sem extensão): ')
             saida = saida+'.csv'
             salvar(agenda, saida)
+        elif op == 5:
+            print('ATENÇÃO: Carregar apagará os registros da seção atual!')
+            cont = input('Deseja continuar? [S/N] ')              
+            if cont[0].upper() == 'S':
+                entrada = input('Nome do arquivo (sem extensão): ')
+                entrada = entrada+'.csv'
+                agenda = carregar(agenda, entrada)
         elif op == 99:
             break
         else:
