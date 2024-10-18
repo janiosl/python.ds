@@ -42,6 +42,7 @@ def consulta(ag):
 
 
 def salvar(ag, saida='agenda.csv'):
+    """Grava agenda em um arquivo csv"""
     with open(saida, 'a') as arquivo:
         print('Nome,Telefone' , file=arquivo)
         for k,v in ag.items():
