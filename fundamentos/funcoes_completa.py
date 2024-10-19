@@ -208,7 +208,14 @@ def analisa_empregado(nome, folha, analise):
     else:
         print('Seu salário não é o menor da equipe')
    
-    
+   
+def consulta(nome):
+    """
+    Implemente esta função para evitar a lógica de consulta
+    de empregado embutida na função main()
+    """
+    pass
+   
 #Criando o programa principal
 def main():
     """
@@ -217,12 +224,15 @@ def main():
     """
     global folha_pagamento
     
+    #Criação da folha de pagamentos
     folha_pagamento = {'João': 15000,
                        'Maria': 18000,
                        'Bruxa': 35000}
     
+    #Análise da folha de pagamentos
     analise = analisa_folha(list(folha_pagamento.values()))
     
+    #Consulta de empregado
     emp = input('Digite o nome de um empregado para análise: ')
     if emp in folha_pagamento.keys():
         analisa_empregado(emp, folha_pagamento, analise)
@@ -230,6 +240,7 @@ def main():
         print(f'{emp} não trabalha nesta empresa.')
         print('=' * 50)
     
+    #Atualização da folha de pagamento
     print('Atualização da folha de pagamento:')
     print('-' * 50)
     
@@ -244,5 +255,6 @@ def main():
         else:
             print('Não houve aumento de salário.')
 
-    
+
+#Chamada do Programa Principal
 main()
