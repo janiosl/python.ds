@@ -5,7 +5,7 @@ Python DS - Funções
 """
 #Função vazia sem retorno
 #========================================================
-def funcao_vazi():
+def funcao_vazia():
     #Variáveis locais
     a = 2
     b = 3
@@ -13,7 +13,7 @@ def funcao_vazi():
 
 
 #Chamada da função
-funcao_vazi()
+funcao_vazia()
 
 #Função com parâmetros, sem retorno
 #========================================================
