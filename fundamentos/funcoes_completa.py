@@ -123,7 +123,7 @@ x_inexistente(4)
 #NameError: name 'x' is not defined
 
 #Solução:
-#ATENÇÃO: Não recomendo "corrigir" este caso, pois é necessariamente um erro
+#ATENÇÃO: Não recomendo "corrigir" este caso, pois não é um erro
 
 #Documentação de ajuda - docstrings
 #========================================================
