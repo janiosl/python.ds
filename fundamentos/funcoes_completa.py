@@ -3,6 +3,10 @@
 Python DS - Funções
 @author: janio
 """
+#========================================================
+### PRIMEIRA PARTE ###
+#========================================================
+
 #Função vazia sem retorno
 #========================================================
 def funcao_vazia():
@@ -83,6 +87,10 @@ ajustes = dict(zip(['Aumento', 'Salário'], novoSalario(salario, taxa_ajuste)))
 ajustes
 
 
+#========================================================
+### SEGUNDA PARTE ###
+#========================================================
+
 #Escopo de variável
 #Variável apenas no escopo da função
 def y_inexistente(x):
@@ -148,6 +156,11 @@ def area_retangulo(b,h):
 
 
 help(area_retangulo)
+
+
+#========================================================
+### PRIMEIRA PARTE ###
+#========================================================
 
 #Uso de bibliotecas
 #========================================================
