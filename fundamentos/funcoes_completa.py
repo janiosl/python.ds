@@ -19,6 +19,7 @@ def funcao_vazia():
 #Chamada da função
 funcao_vazia()
 
+
 #Função com parâmetros, sem retorno
 #========================================================
 def funcao(a,b):
@@ -31,6 +32,12 @@ num2 = 3
 funcao(num1, num2)
 
 funcao(3,7)
+
+a = 5
+b = 8
+funcao(a,b)
+funcao(b,a)
+
 
 #Função com retorno
 #========================================================
@@ -49,16 +56,19 @@ print(resultado)
 #Retorno de múltiplos valores e integração de funções
 #========================================================
 def novoSalario(salario, taxa):
-    aumento = multiplica(salario, taxa_ajuste)
+    aumento = multiplica(salario, taxa)
     novo = salario + aumento
     return aumento, novo
 
+
+novoSalario(29000, 0.085)
 
 #Chamada da função
 salario = 29000
 taxa_ajuste = 0.085
 
 novoSalario(salario, taxa_ajuste)
+
 
 #Diferentes formas de tratamento do retorno múltiplo
 #Cada item retornado em uma variável
@@ -81,6 +91,8 @@ novoSalario(salario, taxa_ajuste)[1]
 #Armazenar retorno em uma tupla
 ajustes = novoSalario(salario, taxa_ajuste)
 ajustes
+type(ajustes)
+
 
 #Construir dicionário com retornos múltiplos
 ajustes = dict(zip(['Aumento', 'Salário'], novoSalario(salario, taxa_ajuste)))
