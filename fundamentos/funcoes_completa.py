@@ -56,12 +56,30 @@ print(resultado)
 #Retorno de múltiplos valores e integração de funções
 #========================================================
 def novoSalario(salario, taxa):
+    """
+    Função realiza atualização do valor do salário
+    Argumentos:
+        salario (float): salário do empregado
+        taxa (float): taxa decimal a ser usada na atualização
+    Retorno:
+        aumento (float): valor do aumento do salário
+        novo (float): novo valor de salário        
+    """
     aumento = multiplica(salario, taxa)
     novo = salario + aumento
     return aumento, novo
 
-
+help(novoSalario)
 novoSalario(29000, 0.085)
+
+import numpy as np
+np.sqrt(25)
+
+help(np.sqrt)
+
+import modulo
+modulo.sum(2,2)
+modulo.sqrt(16)
 
 #Chamada da função
 salario = 29000
@@ -108,10 +126,15 @@ ajustes
 def y_inexistente(x):
     y = x ** 2
     print(y)
+    return y
     
 
 x = 4
 y_inexistente(x)
+y_inexistente(10)
+
+y = y_inexistente(10)
+
 print(y)
 #O print acima deve gerar o erro a seguir:
 #NameError: name 'y' is not defined
@@ -128,6 +151,9 @@ def y_existente(x):
 y_existente(7)
 print(y)
 
+del y
+del x
+
 #Variável fora do escopo da função
 def x_inexistente(a):
     y = x ** 2
@@ -137,6 +163,8 @@ def x_inexistente(a):
 
 #Apaga o x da memória da seção atual antes de testar
 x_inexistente(4)
+
+
 #A chamada função acima deve gerar o erro a seguir:
 #  Cell In[63], line 2 in x_inexistente
 #    y = x ** 2
@@ -145,22 +173,27 @@ x_inexistente(4)
 #Solução:
 #ATENÇÃO: Não recomendo "corrigir" este caso, pois não é um erro
 
+
 #Documentação de ajuda - docstrings
 #========================================================
 #Função sem ajuda personalizada
 def area_retangulo(b,h):
+    #Função calcula área do retângulo
     return b*h
 
 
 help(area_retangulo)
+
+help(sum)
+help(print)
 
 #Função com ajuda personalizada
 def area_retangulo(b,h):
     """
     Função calcula área do retângulo
     Parâmetros:
-        b (int ou float): base 
-        h (int ou float): altura 
+        b (int ou float): base do retângulo
+        h (int ou float): altura do retângulo
     Retorno:
         A (int ou float): área do retângulo
     """
