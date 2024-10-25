@@ -69,7 +69,6 @@ def analisa_empregado(nome, folha, analise):
         print('Seu salário não é o menor da equipe')
         
 
-
 def consulta(emp, folha, analise):
     if emp in folha.keys():
         analisa_empregado(emp, folha, analise)
@@ -78,33 +77,33 @@ def consulta(emp, folha, analise):
         print('=' * 50)
     
 
-        
 #Programa principal (função integradora)
 #======================================================================
-#Criando o programa principal
 def main():
     """
     Programa principal: Integra as funcionalidades de análise
     de informações salariais
-    """
-    global folha_pagamento
-    
+    """    
     #Criação da folha de pagamentos
+    #------------------------------
+    global folha_pagamento
     folha_pagamento = {'João': 15000,
                        'Maria': 18000,
                        'Bruxa': 35000}
     
     #Análise da folha de pagamentos
+    #------------------------------
     analise = analisa_folha(list(folha_pagamento.values()))
     
     #Consulta de empregado
+    #------------------------------
     emp = input('Digite o nome de um empregado para análise: ')    
     consulta(emp, folha_pagamento, analise)
         
     #Atualização da folha de pagamento
+    #------------------------------
     print('Atualização da folha de pagamento:')
     print('-' * 50)
-    
     for k,v in folha_pagamento.items():
         print(f'Empregado: {k} - Salário atual: R${v:.2f}')
 
@@ -116,5 +115,7 @@ def main():
         else:
             print('Não houve aumento de salário.')
 
-    
+
+#Chamada do Programa Principal    
+#======================================================================
 main()
