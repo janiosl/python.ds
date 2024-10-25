@@ -225,10 +225,10 @@ def analisa_folha(salarios):
         menor (float): Menor salário
         
     """
-    media = np.mean(salarios)
-    desvio = np.std(salarios)
-    maior = max(salarios)
-    menor = min(salarios)
+    media = float(np.mean(salarios))
+    desvio = float(np.std(salarios))
+    maior = float(max(salarios))
+    menor = float(min(salarios))
     
     print('Resumo estatístico de salários:')
     print('-' * 50)
@@ -245,8 +245,14 @@ folha_pagamento = {'João': 15000,
                    'Bruxa': 35000}
 
 folha_pagamento.values()
+list(folha_pagamento.values())
 
 analisa_folha(list(folha_pagamento.values()))
+analise = analisa_folha(list(folha_pagamento.values()))
+analise
+dic_analise = dict(zip(['media', 'desvio', 'maior', 'menor'], analise))
+dic_analise
+
 
 #Programa principal (função integradora)
 #======================================================================
@@ -273,7 +279,8 @@ def consulta(nome):
     de empregado embutida na função main()
     """
     pass
-   
+
+    
 #Criando o programa principal
 def main():
     """
