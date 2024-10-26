@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Programa com Função Integradora
+Python DS - Programa com Função Integradora
+
 @author: janio
 """
+#Seção de importação de bibliotecas
+#================================================================
 import numpy as np
 
 
-#Criação das funções dos módulo do programa principal
-#======================================================================
+#Seção de criação das funções (organização modular do programa)
+#================================================================
 def multiplica(a,b):
     res = a*b
     return res
@@ -67,55 +70,25 @@ def analisa_empregado(nome, folha, analise):
         print('Seu salário é o menor da equipe')
     else:
         print('Seu salário não é o menor da equipe')
-        
 
-def consulta(emp, folha, analise):
-    if emp in folha.keys():
-        analisa_empregado(emp, folha, analise)
-    else:
-        print(f'{emp} não trabalha nesta empresa.')
-        print('=' * 50)
+
+#Seção do Programa Principal
+#================================================================
+def principal():
+    #Criação da folha de pagamento
+    #-----------------------------------
     
-
-#Programa principal (função integradora)
-#======================================================================
-def main():
-    """
-    Programa principal: Integra as funcionalidades de análise
-    de informações salariais
-    """    
-    #Criação da folha de pagamentos
-    #------------------------------
-    global folha_pagamento
-    folha_pagamento = {'João': 15000,
-                       'Maria': 18000,
-                       'Bruxa': 35000}
+    #Resumo estatístico da folha
+    #-----------------------------------
     
-    #Análise da folha de pagamentos
-    #------------------------------
-    analise = analisa_folha(list(folha_pagamento.values()))
+    #Consulta de empregados
+    #-----------------------------------
     
-    #Consulta de empregado
-    #------------------------------
-    emp = input('Digite o nome de um empregado para análise: ')    
-    consulta(emp, folha_pagamento, analise)
-        
-    #Atualização da folha de pagamento
-    #------------------------------
-    print('Atualização da folha de pagamento:')
-    print('-' * 50)
-    for k,v in folha_pagamento.items():
-        print(f'Empregado: {k} - Salário atual: R${v:.2f}')
-
-        if v < analise[0]:
-            t = 0.2
-            _, ns = novoSalario(v, t)
-            folha_pagamento[k] = ns
-            print(f'Novo salário: R$ {ns:.2f}. Aumento de {t*100}%')
-        else:
-            print('Não houve aumento de salário.')
+    #Atualização dos salários
+    #-----------------------------------
+    pass
 
 
-#Chamada do Programa Principal    
-#======================================================================
-main()
+#Chamada do Programa principal
+#================================================================
+principal()
