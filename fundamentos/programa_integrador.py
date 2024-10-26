@@ -72,21 +72,52 @@ def analisa_empregado(nome, folha, analise):
         print('Seu salário não é o menor da equipe')
 
 
+def consulta(nome, folha, analise):
+    if nome in folha.keys():
+        print(f'{nome} é empregado desta empresa')
+        analisa_empregado(nome, folha, analise)
+    else:
+        print(f'{nome} não é empregado desta empresa')
+
+
 #Seção do Programa Principal
 #================================================================
 def principal():
     #Criação da folha de pagamento
     #-----------------------------------
+    global folha_pagamento
+    folha_pagamento = {'João': 15000,
+                       'Maria': 18000,
+                       'Bruxa': 30000}
+    print('Folha de pagamento criada com sucesso')
+    print('-' * 50)
     
     #Resumo estatístico da folha
     #-----------------------------------
+    analise = analisa_folha(list(folha_pagamento.values()))
     
     #Consulta de empregados
     #-----------------------------------
+    print('Consultando empregado')
+    nome = input('Digite o nome do empregado a ser consultado: ')
+    consulta(nome, folha_pagamento, analise)
+    print('-' * 50)
     
     #Atualização dos salários
     #-----------------------------------
-    pass
+    print('Atualizando folha de pagamento')
+    t = 0.2
+    for k,v in folha_pagamento.items():
+        print(k,v)
+        if v < analise[0]:
+            _, ns = novoSalario(v, t)
+            folha_pagamento[k] = ns
+    
+    print('Folha de Pagamento atualizada')
+    print('Novos salários')
+    print(folha_pagamento)
+    print('Programa Encerrado')
+    print('-' * 50)
 
 
 #Chamada do Programa principal
