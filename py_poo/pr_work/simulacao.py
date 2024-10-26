@@ -234,7 +234,7 @@ class Evento:
 
 
 
-def main():
+def principal():
     global sa
     global scp
     global temp
@@ -323,4 +323,4 @@ def main():
 
     
 if __name__ == "__main__":
-    main()
+    principal()
