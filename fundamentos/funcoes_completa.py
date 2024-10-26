@@ -72,6 +72,8 @@ def novoSalario(salario, taxa):
 help(novoSalario)
 novoSalario(29000, 0.085)
 
+
+#Exemplo (EXTRA) do funcionamento de módulos
 import numpy as np
 np.sqrt(25)
 
