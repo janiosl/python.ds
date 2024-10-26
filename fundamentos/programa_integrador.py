@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Python DS - Programa com Função Integradora
-
 @author: janio
 """
 #Seção de importação de bibliotecas
@@ -80,9 +79,13 @@ def consulta(nome, folha, analise):
         print(f'{nome} não é empregado desta empresa')
 
 
-#Seção do Programa Principal
+#Seção do Programa Principal (Função Integradora)
 #================================================================
 def principal():
+    """
+    Programa principal: Integra as funcionalidades de análise
+    de informações salariais
+    """
     #Criação da folha de pagamento
     #-----------------------------------
     global folha_pagamento
@@ -120,6 +123,6 @@ def principal():
     print('-' * 50)
 
 
-#Chamada do Programa principal
+#Chamada do Programa Principal
 #================================================================
 principal()
