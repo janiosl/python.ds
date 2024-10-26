@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Oct 22 17:42:32 2024
+Exemplo simplificado de módulo de funções
+Para importar o módulo pode ser usado normlamente a função import
+Para funcionamento da importação, este arquivo pode ser mantido
+no mesmo diretório do programa principal
 
 @author: janio
 """
