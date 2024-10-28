@@ -130,7 +130,7 @@ class Evento:
         
         return lim
     
-    def detector(self, type_sens = False, w=30, sensitivity=0.2, adaptive=False):
+    def detect(self, type_sens = False, w=30, sensitivity=0.2, adaptive=False):
         if type_sens == True:
             if sensitivity < 0 or sensitivity > 1:
                 return '*** Sensitivity invalid. It must be between 0 and 1 ***'
