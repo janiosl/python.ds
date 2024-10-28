@@ -22,7 +22,7 @@ ph <- GeraTS(serie=series)
 deost <- Evento(s=ph)
 
 #Detection
-ev_res <- deost$detect()
+deost$detect()
 
 #Result organization as harbinger outpu
 result <- data.frame(idx = 1:length(series))
