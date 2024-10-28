@@ -3,12 +3,6 @@
 Time series online event detector
 @author: janio
 """
-
-# -*- coding: utf-8 -*-
-"""
-Time series generator and event detector
-@author: janio
-"""
 import random
 import numpy as np
 import pandas as pd
