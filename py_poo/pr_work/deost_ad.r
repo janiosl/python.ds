@@ -22,11 +22,11 @@ ph <- GeraTS(serie=series)
 deost <- Evento(s=ph)
 
 #Detection
-deost$detect()
+ev_idx <- deost$detect()[[1]]
+print(deost)
 
 #Result organization as harbinger output
 #Adjust index from Python pattern to R pattern (start from 1 instead of from 0)
-ev_idx <- deost$ev
 ev_idx <- ev_idx+1
 n = length(series)
 
