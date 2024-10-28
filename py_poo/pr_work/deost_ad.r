@@ -7,21 +7,22 @@ library(daltoolbox)
 library(dalevents)
 library(harbinger)
 
+#Unused model - Creating just to activate Harbinger evaluation and plot funcions
 model <- hanr_fbiad()
 
-
+#Dataset
 data("gecco")
 gecco <- gecco$gecco[16500:18000,]
 series <- gecco$ph
 reference <- gecco$event
-
 plot(as.ts(series))
 
+#Create DeoST objects
 ph <- GeraTS(serie=series)
 deost <- Evento(s=ph)
 
 #Detection
-ev_res <- deost$detector()
+ev_res <- deost$detect()
 
 #Result organization as harbinger outpu
 result <- data.frame(idx = 1:length(series))
