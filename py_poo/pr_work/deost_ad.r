@@ -24,14 +24,24 @@ deost <- Evento(s=ph)
 #Detection
 deost$detect()
 
-#Result organization as harbinger outpu
-result <- data.frame(idx = 1:length(series))
-result$event <- 0
-result$event[deost$ev] <- 1
-result$type <- ""
-result$type[deost$ev] <- "anomaly"
-head(result)
+#Result organization as harbinger output
+#Adjust index from Python pattern to R pattern (start from 1 instead of from 0)
+ev_idx <- deost$ev
+ev_idx <- ev_idx+1
+n = length(series)
 
+create_harb_res <- function(ev_idx, n){
+  result <- data.frame(idx = 1:n)
+  result$event <- 0
+  result$event[ev_idx] <- 1
+  result$type <- ""
+  result$type[ev_idx] <- "anomaly"
+  return (result)
+}
+
+result <- create_harb_res(ev_idx, n)
+
+head(result)
 #Evaluate
 evaluation <- evaluate(model,
                        result$event,
