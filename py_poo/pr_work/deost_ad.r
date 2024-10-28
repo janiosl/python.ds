@@ -13,8 +13,12 @@ model <- hanr_fbiad()
 #Dataset
 data("gecco")
 gecco <- gecco$gecco[16500:18000,]
+plot(as.ts(gecco[,1:9]))
+
+#Select variable to univariate analysis
 series <- gecco$ph
 reference <- gecco$event
+
 plot(as.ts(series))
 
 #Create DeoST objects
