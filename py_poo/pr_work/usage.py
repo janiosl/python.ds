@@ -4,7 +4,8 @@ DeoST AD usage
 @author: janio
 """
 
-from deost_ad import *
+from deost_ad import Evento, GeraTS
+
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -16,11 +17,11 @@ gecco = pd.read_csv(entrada)
 gecco.head()
 gecco.describe()
 
-
 #Subset
 series = gecco.ph
 reference = gecco.event
 plt.plot(series)
+
 
 #DeoST detector
 #Create DeoST object with series
